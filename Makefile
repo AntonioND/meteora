@@ -45,9 +45,10 @@ DEFINES		:= -DTARGET_FLOAT32_IS_FIXED -DTARGET_IS_NDS
 # Libraries
 # ---------
 
-LIBS		:= -lul -lpng -lz -lnds9
+LIBS		:= -lul -lpng -lz -ldswifi9 -lnds9
 LIBDIRS		:= $(BLOCKSDSEXT)/ulibrary \
-		   $(BLOCKSDS)/libs/libnds
+		   $(BLOCKSDS)/libs/libnds \
+		   $(BLOCKSDS)/libs/dswifi
 
 # Build artifacts
 # ---------------

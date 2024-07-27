@@ -1,5 +1,5 @@
 #include <ulib/ulib.h>
-#include <pa9.h>
+#include <PA9.h>
 
 #include <ulib/glWrapper.h>
 
