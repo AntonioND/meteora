@@ -8,30 +8,30 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 #include "CDecal.h"
 #include "CPixelDecal.h"
 
-#include "title.h"
+#include "title_png.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
-#include "spacebas_title.h"
+#include "spacebas_title_png.h"
 
-#include "explode.h"
+#include "explode_raw.h"
 #include "CPulseDecal.h"
 #include "CTextDecal.h"
 #include "SaveManager.h"
 
-#include "img_evolution_tag.h"
+#include "img_evolution_tag_png.h"
 
-#include "menu_ambiant.h"
+#include "menu_ambiant_raw.h"
 
-#include "menu_haut.h"
-#include "menu_bas.h"
+#include "menu_haut_png.h"
+#include "menu_bas_png.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "GameScene.h"
 #include "HelpScene.h"
@@ -45,7 +45,7 @@
 #include "NetworkScene.h"
 
 #include "DSIO.h"
-#include "DSIO_tag.h"
+#include "DSIO_tag_png.h"
 
 MenuScene::MenuScene(): CScene()  {
     //CScene::CScene();
@@ -68,20 +68,20 @@ void MenuScene::render() {
     gc->flushSprites();
 
 
-    PA_PlaySoundRepeat(15, menu_ambiant);
+    PA_PlaySoundRepeat(15, menu_ambiant_raw);
 
     CSprite * background_haut = new CSprite(128,96,0);
     //loadTex16col(background_haut,menu_haut);
-    loadTex(background_haut,title);
+    loadTex(background_haut,title_png);
 
     CSprite * background_bas = new CSprite(128,192+32+96,0);
-    loadTex(background_bas,menu_bas)
+    loadTex(background_bas,menu_bas_png)
 
     CPulseDecal * evo = new CPulseDecal();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
     evo->setX(191);
     evo->setY(89);
     evo->setVel(0,0);
-    loadTex16col(evo,img_evolution_tag)
+    loadTex16col(evo,img_evolution_tag_png)
 
     gc->addDecoSprite(evo);
 
@@ -91,7 +91,7 @@ void MenuScene::render() {
         dsioim->setX(128);
         dsioim->setY(125);
         dsioim->setVel(0,0);
-        loadTex16col(dsioim,DSIO_tag)
+        loadTex16col(dsioim,DSIO_tag_png)
 
         gc->addDecoSprite(dsioim);
 
@@ -130,7 +130,7 @@ void MenuScene::render() {
                     bulletS->setY((int)PA_Rand()%60+110);
                     bulletS->setVel(5,0);
                     bulletS->size=((double)(PA_Rand()%8))/8;
-                    loadTex16col(bulletS,crap_small)
+                    loadTex16col(bulletS,crap_small_png)
 
                     gc->addDecoSprite(bulletS);
 
@@ -139,7 +139,7 @@ void MenuScene::render() {
                     bulletS->setY((int)PA_Rand()%60+110);
                     bulletS->setVel(3,0);
                     bulletS->size=((double)(PA_Rand()%8))/8;
-                    loadTex16col(bulletS,crap_small)
+                    loadTex16col(bulletS,crap_small_png)
 
                     gc->addDecoSprite(bulletS);
 
@@ -192,7 +192,7 @@ void MenuScene::render() {
                         if (!fading) {
                             GameCtrl::getSharedObject()->addDecoSprite(new FadingDecal());
                             fading = 1;
-                            GC_playSound(error_sound);
+                            GC_playSound(error_sound_raw);
                             this->nextScene = new StoryMenuScene();
                         }
 
@@ -204,7 +204,7 @@ void MenuScene::render() {
                         if (!fading) {
                             GameCtrl::getSharedObject()->addDecoSprite(new FadingDecal());
                             fading = 1;
-                            GC_playSound(error_sound);
+                            GC_playSound(error_sound_raw);
                             this->nextScene = new MarathonScene();
                         }
 
@@ -219,7 +219,7 @@ void MenuScene::render() {
                                 if (!fading) {
                                 GameCtrl::getSharedObject()->addDecoSprite(new FadingDecal());
                                 fading = 1;
-                                GC_playSound(error_sound);
+                                GC_playSound(error_sound_raw);
                                 this->nextScene = new NetworkScene();
 
                                 }
@@ -227,7 +227,7 @@ void MenuScene::render() {
                                 if (!fading) {
                                 GameCtrl::getSharedObject()->addDecoSprite(new FadingDecal());
                                 fading = 1;
-                                GC_playSound(error_sound);
+                                GC_playSound(error_sound_raw);
                                 this->nextScene = new TutorialScene();
                                 }
                     //this->nextScene = new GameScene();

@@ -8,37 +8,37 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 #include "CDecal.h"
 #include "CPixelDecal.h"
 
-#include "title.h"
+#include "title_png.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
-#include "spacebas_title.h"
+#include "spacebas_title_png.h"
 
-#include "explode.h"
+#include "explode_raw.h"
 #include "CPulseDecal.h"
 
-#include "touch_the_screen.h"
+#include "touch_the_screen_png.h"
 
-#include "menu_ambiant.h"
+#include "menu_ambiant_raw.h"
 
-#include "menu_haut.h"
-#include "menu_bas.h"
+#include "menu_haut_png.h"
+#include "menu_bas_png.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "GameScene.h"
 #include "MenuScene.h"
 
-#include "winner_sound.h"
+#include "winner_sound_raw.h"
 
-#include "score_haut.h"
+#include "score_haut_png.h"
 
-#include "title.h"
+#include "title_png.h"
 
 ScoreScene::ScoreScene(): CScene()  {
     //CScene::CScene();
@@ -59,13 +59,13 @@ void ScoreScene::render() {
     gc->flushSprites();
 
 
-    PA_PlaySoundRepeat(15, winner_sound);
+    PA_PlaySoundRepeat(15, winner_sound_raw);
 
     CSprite * background_haut = new CSprite(128,96,0);
-    loadTex(background_haut,score_haut);
+    loadTex(background_haut,score_haut_png);
 
     CSprite * background_bas = new CSprite(128,192+32+96,0);
-    loadTex(background_bas,title)
+    loadTex(background_bas,title_png)
 
     int i = 0;
 
@@ -89,7 +89,7 @@ void ScoreScene::render() {
            if (ul_keys.held.touch) {
                     if (i>40) {
                         CScene::stopScene();
-                        GC_playSound(error_sound);
+                        GC_playSound(error_sound_raw);
                     }
                     //this->nextScene = new GameScene();
 

@@ -15,7 +15,7 @@
 
 #include "../CMeteor.h"
 
-#include "launch.h"
+#include "launch_raw.h"
 
 #include <cstdlib>
 #include <time.h>
@@ -57,7 +57,7 @@ void EnnemyMultipleShotsManager::thinking()
 
     mat = new ModifierAddTrailer(bulletS);
 
-     GC_playSound(launch);
+     GC_playSound(launch_raw);
 
    /* bulletNumber++;
 
@@ -87,7 +87,7 @@ void EnnemyMultipleShotsManager::thinking()
     bulletNumber++;
 
         if (bulletNumber % 10 ==1) {
-             GC_playSound(launch);
+             GC_playSound(launch_raw);
         }
     } else {
         dead();

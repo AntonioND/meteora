@@ -19,8 +19,8 @@
 #include "ScoreScene.h"
 
 
-
-#include "modfile.h"
+// TODO: This header is missing
+//#include "modfile.h"
 
 #include <sstream>
 
@@ -29,13 +29,13 @@
 #include "FastMath.h"
 #include "fat.h"
 
-#include "invoc_final_sound.h"
+#include "invoc_final_sound_raw.h"
 
-#include "splash_haut.h"
-#include "splash_bas.h"
+#include "splash_haut_png.h"
+#include "splash_bas_png.h"
 
-#include "pre_title_bas.h"
-#include "pre_title_haut.h"
+#include "pre_title_bas_png.h"
+#include "pre_title_haut_png.h"
 
 #include "SplashScreenScene.h"
 
@@ -107,7 +107,7 @@ int main()
 if (SaveManager::ent()->isDLDI) {
 
     if (SaveManager::ent()->get("save?")=="") {
-            GC_playSound(invoc_final_sound);
+            GC_playSound(invoc_final_sound_raw);
 
                UL_MSGBOX_BUTTON buttons[2] = {
 			    {UL_KEY_A, "A: Yes"},
@@ -125,7 +125,7 @@ if (SaveManager::ent()->isDLDI) {
     SaveManager::ent()->save();
 } else {
 
-            GC_playSound(invoc_final_sound);
+            GC_playSound(invoc_final_sound_raw);
 
                UL_MSGBOX_BUTTON buttons[2] = {
 			    {UL_KEY_A, "A: Oops"},
@@ -158,14 +158,14 @@ if (SaveManager::ent()->isDLDI) {
 
     spr = new CSprite(128,96,0);
     //loadTex16col(background_haut,menu_haut);
-    loadTex(spr,pre_title_haut);
+    loadTex(spr,pre_title_haut_png);
 
     splash->addSprite(spr);
 
 
     spr = new CSprite(128,192+32+96,0);
     //loadTex16col(background_haut,menu_haut);
-    loadTex(spr,pre_title_bas);
+    loadTex(spr,pre_title_bas_png);
 
     splash->addSprite(spr);
 

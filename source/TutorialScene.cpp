@@ -8,28 +8,28 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 #include "CDecal.h"
 #include "CPixelDecal.h"
 
-#include "title.h"
+#include "title_png.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
-#include "spacebas_title.h"
+#include "spacebas_title_png.h"
 
-#include "explode.h"
+#include "explode_raw.h"
 #include "CPulseDecal.h"
 
-#include "touch_the_screen.h"
+#include "touch_the_screen_png.h"
 
-#include "menu_ambiant.h"
+#include "menu_ambiant_raw.h"
 
-#include "menu_haut.h"
-#include "menu_bas.h"
+#include "menu_haut_png.h"
+#include "menu_bas_png.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "HelpScene.h"
 #include "GameScene.h"
@@ -43,36 +43,36 @@
 #include "SplashScreenScene.h"
 
 
-#include "tutorial_haut_1.h"
-#include "tutorial_bas_1.h"
+#include "tutorial_haut_1_png.h"
+#include "tutorial_bas_1_png.h"
 
-#include "tutorial_haut_2.h"
-#include "tutorial_bas_2.h"
-
-
-#include "tutorial_haut_2_3.h"
-#include "tutorial_bas_2_3.h"
-
-#include "tutorial_haut_3.h"
-#include "tutorial_bas_3.h"
-
-#include "tutorial_haut_4.h"
-#include "tutorial_bas_4.h"
-
-#include "tutorial_haut_5.h"
-#include "tutorial_bas_5.h"
+#include "tutorial_haut_2_png.h"
+#include "tutorial_bas_2_png.h"
 
 
-#include "tutorial_haut_6.h"
-#include "tutorial_bas_6.h"
+#include "tutorial_haut_2_3_png.h"
+#include "tutorial_bas_2_3_png.h"
 
-#include "tutorial_haut_7.h"
-#include "tutorial_bas_7.h"
+#include "tutorial_haut_3_png.h"
+#include "tutorial_bas_3_png.h"
 
-#include "tutorial_haut_8.h"
-#include "tutorial_bas_8.h"
+#include "tutorial_haut_4_png.h"
+#include "tutorial_bas_4_png.h"
 
-#include "congrat_img.h"
+#include "tutorial_haut_5_png.h"
+#include "tutorial_bas_5_png.h"
+
+
+#include "tutorial_haut_6_png.h"
+#include "tutorial_bas_6_png.h"
+
+#include "tutorial_haut_7_png.h"
+#include "tutorial_bas_7_png.h"
+
+#include "tutorial_haut_8_png.h"
+#include "tutorial_bas_8_png.h"
+
+#include "congrat_img_png.h"
 
 
 
@@ -273,14 +273,14 @@ void tut1() {
 
         CSprite * background_haut = new CSprite(128,96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex(background_haut,tutorial_haut_1);
+        loadTex(background_haut,tutorial_haut_1_png);
 
         splash->addSprite(background_haut);
 
 
         background_haut = new CSprite(128,192+32+96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex(background_haut,tutorial_bas_1);
+        loadTex(background_haut,tutorial_bas_1_png);
 
         splash->addSprite(background_haut);
 
@@ -296,14 +296,14 @@ void tut1() {
 
         background_haut = new CSprite(128,96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex(background_haut,tutorial_haut_2);
+        loadTex(background_haut,tutorial_haut_2_png);
 
         splash->addSprite(background_haut);
 
 
         background_haut = new CSprite(128,192+32+96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex(background_haut,tutorial_bas_2);
+        loadTex(background_haut,tutorial_bas_2_png);
 
         splash->addSprite(background_haut);
 
@@ -318,14 +318,14 @@ void tut1() {
 
         background_haut = new CSprite(128,96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex(background_haut,tutorial_haut_3);
+        loadTex(background_haut,tutorial_haut_3_png);
 
         splash->addSprite(background_haut);
 
 
         background_haut = new CSprite(128,192+32+96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex(background_haut,tutorial_bas_3);
+        loadTex(background_haut,tutorial_bas_3_png);
 
         splash->addSprite(background_haut);
 
@@ -340,14 +340,14 @@ void tut1() {
 
         background_haut = new CSprite(128,96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex(background_haut,tutorial_haut_2_3);
+        loadTex(background_haut,tutorial_haut_2_3_png);
 
         splash->addSprite(background_haut);
 
 
         background_haut = new CSprite(128,192+32+96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex(background_haut,tutorial_bas_2_3);
+        loadTex(background_haut,tutorial_bas_2_3_png);
 
         splash->addSprite(background_haut);
 
@@ -380,14 +380,14 @@ void tut2() {
 
         CSprite * background_haut = new CSprite(128,96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex(background_haut,tutorial_haut_4);
+        loadTex(background_haut,tutorial_haut_4_png);
 
         splash->addSprite(background_haut);
 
 
         background_haut = new CSprite(128,192+32+96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex(background_haut,tutorial_bas_4);
+        loadTex(background_haut,tutorial_bas_4_png);
 
         splash->addSprite(background_haut);
 
@@ -421,14 +421,14 @@ void tut3() {
 
         CSprite * background_haut = new CSprite(128,96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex16col(background_haut,tutorial_haut_5);
+        loadTex16col(background_haut,tutorial_haut_5_png);
 
         splash->addSprite(background_haut);
 
 
         background_haut = new CSprite(128,192+32+96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex(background_haut,tutorial_bas_5);
+        loadTex(background_haut,tutorial_bas_5_png);
 
         splash->addSprite(background_haut);
 
@@ -463,14 +463,14 @@ void tut4() {
 
         CSprite * background_haut = new CSprite(128,96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex16col(background_haut,tutorial_haut_6);
+        loadTex16col(background_haut,tutorial_haut_6_png);
 
         splash->addSprite(background_haut);
 
 
         background_haut = new CSprite(128,192+32+96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex16col(background_haut,tutorial_bas_6);
+        loadTex16col(background_haut,tutorial_bas_6_png);
 
         splash->addSprite(background_haut);
 
@@ -505,14 +505,14 @@ void tut5() {
 
         CSprite * background_haut = new CSprite(128,96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex16col(background_haut,tutorial_haut_7);
+        loadTex16col(background_haut,tutorial_haut_7_png);
 
         splash->addSprite(background_haut);
 
 
         background_haut = new CSprite(128,192+32+96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex16col(background_haut,tutorial_bas_7);
+        loadTex16col(background_haut,tutorial_bas_7_png);
 
         splash->addSprite(background_haut);
 
@@ -547,14 +547,14 @@ void tut6() {
 
         CSprite * background_haut = new CSprite(128,96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex16col(background_haut,tutorial_haut_8);
+        loadTex16col(background_haut,tutorial_haut_8_png);
 
         splash->addSprite(background_haut);
 
 
         background_haut = new CSprite(128,192+32+96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex16col(background_haut,tutorial_bas_8);
+        loadTex16col(background_haut,tutorial_bas_8_png);
 
         splash->addSprite(background_haut);
 
@@ -594,7 +594,7 @@ void TutorialScene::render() {
 
     CSprite * background_haut = new CSprite(128,96,0);
     //loadTex16col(background_haut,menu_haut);
-    loadTex(background_haut,congrat_img);
+    loadTex(background_haut,congrat_img_png);
 
     splash->addSprite(background_haut);
 

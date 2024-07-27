@@ -8,46 +8,46 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 #include "CDecal.h"
 #include "CPixelDecal.h"
 
-#include "title.h"
+#include "title_png.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
-#include "spacebas_title.h"
+#include "spacebas_title_png.h"
 
-#include "explode.h"
+#include "explode_raw.h"
 #include "CPulseDecal.h"
 
-#include "touch_the_screen.h"
+#include "touch_the_screen_png.h"
 
-#include "menu_ambiant.h"
+#include "menu_ambiant_raw.h"
 
-#include "menu_haut.h"
-#include "menu_bas.h"
+#include "menu_haut_png.h"
+#include "menu_bas_png.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "GameScene.h"
 #include "HelpScene.h"
 #include "StoryScene.h"
 #include "MarathonScene.h"
 
-#include "story_1.h"
-#include "story_2.h"
-#include "story_3.h"
-#include "story_4.h"
-#include "story_5.h"
-#include "story_7.h"
+#include "story_1_png.h"
+#include "story_2_png.h"
+#include "story_3_png.h"
+#include "story_4_png.h"
+#include "story_5_png.h"
+#include "story_7_png.h"
 
-#include "story_tutorial.h"
+#include "story_tutorial_png.h"
 
-#include "story_final.h"
+#include "story_final_png.h"
 
-#include "cinematic_sound.h"
+#include "cinematic_sound_raw.h"
 
 
 
@@ -72,7 +72,7 @@ void TutorialCinematicScene::render() {
     string description2 = "";
 
     PA_StopSound(12);
-    PA_PlaySoundRepeat(12, cinematic_sound);
+    PA_PlaySoundRepeat(12, cinematic_sound_raw);
 
     /*CSprite * background_haut = new CSprite(128,96,0);
     //loadTex16col(background_haut,menu_haut);
@@ -86,7 +86,7 @@ void TutorialCinematicScene::render() {
 
     scrapper->setVelX(CFixed(0)+CFixed(0.2));
 
-    loadTex(scrapper,story_final);
+    loadTex(scrapper,story_final_png);
 
     gc->addDecoSprite(scrapper);
 
@@ -98,37 +98,37 @@ void TutorialCinematicScene::render() {
 
 
     if (number ==1 ) {
-        loadTex(scrapper,story_tutorial);
+        loadTex(scrapper,story_tutorial_png);
         description = "Apply that your just learn,";
         description2= "and KILL your opponent !";
     }
     if (number ==2 ) {
-        loadTex(scrapper,story_tutorial);
+        loadTex(scrapper,story_tutorial_png);
         description = "Use your new spell,";
         description2= "and KILL your opponent !";
     }
     if (number ==3 ) {
-        loadTex(scrapper,story_tutorial);
+        loadTex(scrapper,story_tutorial_png);
         description = "Merge... evolve..";
         description2= "and KILL your opponent";
     }
     if (number ==4 ) {
-        loadTex(scrapper,story_tutorial);
+        loadTex(scrapper,story_tutorial_png);
         description = "Blow, save your life,";
         description2= "and KILL your opponent";
     }
     if (number ==5 ) {
-        loadTex(scrapper,story_tutorial);
+        loadTex(scrapper,story_tutorial_png);
         description = "Take the control,";
         description2= "and KILL your opponent";
     }
     if (number ==6 ) {
-        loadTex(scrapper,story_tutorial);
+        loadTex(scrapper,story_tutorial_png);
         description = "Just enjoy,";
         description2= "and KILL your opponent";    }
 
     if (number ==7 ) {
-        loadTex(scrapper,story_final);
+        loadTex(scrapper,story_final_png);
         description = "source of all evil";
         description2 = "this is your final destination";
     }
@@ -150,7 +150,7 @@ void TutorialCinematicScene::render() {
            if (ul_keys.held.touch&&(i>60)) {
 
                     CScene::stopScene();
-                    GC_playSound(error_sound);
+                    GC_playSound(error_sound_raw);
             }
 
 

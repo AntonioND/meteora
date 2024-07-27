@@ -8,15 +8,15 @@
 #include "GameCtrl.h"
 #include "CExplosion.h"
 
-#include "meteor.h"
+#include "meteor_png.h"
 
 #include <cstdlib>
 #include <time.h>
 #include "math.h"
-#include "bullet.h"
+#include "bullet_png.h"
 
-#include "small_pix.h"
-#include "crap_small.h"
+#include "small_pix_png.h"
+#include "crap_small_png.h"
 #include "CPixelDecal.h"
 
 #include "GameScene.h"
@@ -29,7 +29,7 @@ CMeteor::CMeteor(): CBullet() {
     }
     this->size = sqrt(this->weight)*0.1; //pow(weight,1);
     mType = 2;
-    loadTex(this,meteor)
+    loadTex(this,meteor_png)
 
     //color = RGB15(255,255,255);
 

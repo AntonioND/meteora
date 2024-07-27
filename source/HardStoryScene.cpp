@@ -8,28 +8,28 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 #include "CDecal.h"
 #include "CPixelDecal.h"
 
-#include "title.h"
+#include "title_png.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
-#include "spacebas_title.h"
+#include "spacebas_title_png.h"
 
-#include "explode.h"
+#include "explode_raw.h"
 #include "CPulseDecal.h"
 
-#include "touch_the_screen.h"
+#include "touch_the_screen_png.h"
 
-#include "menu_ambiant.h"
+#include "menu_ambiant_raw.h"
 
-#include "menu_haut.h"
-#include "menu_bas.h"
+#include "menu_haut_png.h"
+#include "menu_bas_png.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "HelpScene.h"
 #include "GameScene.h"
@@ -42,7 +42,7 @@
 
 #include "SplashScreenScene.h"
 
-#include "congrat_img.h"
+#include "congrat_img_png.h"
 
 #include "SaveManager.h"
 
@@ -223,7 +223,7 @@ void HardStoryScene::displayCongrat() {
 
         CSprite * background_haut = new CSprite(128,96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex(background_haut,congrat_img);
+        loadTex(background_haut,congrat_img_png);
 
         splash->addSprite(background_haut);
 

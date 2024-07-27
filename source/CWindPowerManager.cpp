@@ -16,7 +16,7 @@
 
 #include "CMeteor.h"
 
-#include "launch.h"
+#include "launch_raw.h"
 
 #include <cstdlib>
 #include <time.h>
@@ -27,7 +27,7 @@
 #include "GameCtrl.h"
 #include "CDecal.h"
 
-#include "repell.h"
+#include "repell_png.h"
 
 #include "DSIO.h"
 
@@ -46,7 +46,7 @@ CWindPowerManager::CWindPowerManager() :CSprite() {
 
 
     CDecal * decal = new CDecal();
-    loadTex16col(decal,repell)
+    loadTex16col(decal,repell_png)
 
     decal->nextThink = 2;
     decal->lifetime = 210;

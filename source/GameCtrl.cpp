@@ -10,9 +10,9 @@
 
 #include "CDecal.h"
 
-#include "power_font_min.h"
-#include "power_font_maj.h"
-#include "power_font_num.h"
+#include "power_font_min_png.h"
+#include "power_font_maj_png.h"
+#include "power_font_num_png.h"
 
   GameCtrl* GameCtrl::pinstance = 0;// initialize pointer
 
@@ -80,7 +80,7 @@
                     dec=new CDecal();
 
                     dec->mFrameNumber = 33;
-                    loadTex16col(dec,power_font_maj);
+                    loadTex16col(dec,power_font_maj_png);
                     //dec->frame = s[i]-48;
                     dec->frame = s[i]-59;
 
@@ -100,7 +100,7 @@
                     dec=new CDecal();
 
                     dec->mFrameNumber = 31;
-                    loadTex16col(dec,power_font_min);
+                    loadTex16col(dec,power_font_min_png);
                     //dec->frame = s[i]-48;
                     dec->frame = s[i]-92;
                     dec->lifetime = i*1;
@@ -125,7 +125,7 @@
                   if ((s[i] >= 58) &&(s[i] < 91)) {
                     dec=new CSprite();
                     dec->mFrameNumber = 33;
-                    loadTex16col(dec,power_font_maj);
+                    loadTex16col(dec,power_font_maj_png);
 
                     //dec->frame = s[i]-48;
                     dec->frame = s[i]-58;
@@ -144,7 +144,7 @@
                     dec=new CSprite();
                     dec->mFrameNumber = 31;
 
-                    loadTex16col(dec,power_font_min);
+                    loadTex16col(dec,power_font_min_png);
                     //dec->frame = s[i]-48;
                     dec->frame = s[i]-92;
                     dec->y = CFixed(y);
@@ -159,7 +159,7 @@
                     dec=new CSprite();
                     dec->mFrameNumber = 10;
 
-                    loadTex16col(dec,power_font_num);
+                    loadTex16col(dec,power_font_num_png);
                     //dec->frame = s[i]-48;
                     dec->frame = s[i]-33;
                     dec->y = CFixed(y);

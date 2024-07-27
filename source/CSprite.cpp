@@ -8,7 +8,7 @@
 #include <math.h>
 #include "GameCtrl.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
 #include "fat.h"
 
@@ -88,7 +88,7 @@ CSprite::CSprite(int x, int y, int angle, int frameNumber)		{
    //END DEBUG SPRITE
 
 
-   loadTex16col(this,crap_small)
+   loadTex16col(this,crap_small_png)
 
 
 }

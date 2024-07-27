@@ -15,7 +15,7 @@
 
 #include "CMeteor.h"
 
-#include "launch.h"
+#include "launch_raw.h"
 
 #include <cstdlib>
 #include <time.h>
@@ -58,7 +58,7 @@ void CChargesShotManager::thinking()
 
     //mat = new ModifierAddTrailer(bulletS);
 
-     GC_playSound(launch);
+     GC_playSound(launch_raw);
 
      CConcentrate * cc;
      cc = new CConcentrate();
@@ -94,7 +94,7 @@ void CChargesShotManager::thinking()
     bulletNumber++;
 
         if (bulletNumber % 10 ==1) {
-             GC_playSound(launch);
+             GC_playSound(launch_raw);
         }
 
 

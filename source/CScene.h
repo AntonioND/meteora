@@ -3,7 +3,7 @@
 
 #include "CSprite.h"
 
-#include "debuglogger.h"
+#include "DebugLogger.h"
 
 
 //void ulSetAlphaDecal(UL_SPECIAL_EFFECT effect, int coeff, int polygroup);

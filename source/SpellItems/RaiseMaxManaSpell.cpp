@@ -8,13 +8,13 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
-#include "repell.h"
-#include "multpleshotimg.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
+#include "repell_png.h"
+#include "multpleshotimg_png.h"
 
-#include "explode.h"
-#include "big_boom.h"
+#include "explode_raw.h"
+#include "big_boom_raw.h"
 
 #include "../GameCtrl.h"
 #include "../GameScene.h"
@@ -23,14 +23,14 @@
 #include "../ModifierBlast.h"
 #include "../CAlchemySpell.h"
 
-#include "menu_raise_maxmana.h"
+#include "menu_raise_maxmana_png.h"
 
 RaiseMaxManaSpell::RaiseMaxManaSpell() : SpellItem() {
     //ulDisableTransparentColor();
-    //#loadTex16col(this,trapattack)
-    loadTex16col(this,menu_raise_maxmana)
+    //#loadTex16col(this,trapattack_png)
+    loadTex16col(this,menu_raise_maxmana_png)
     //ulSetTransparentColor(RGB15(31, 0, 31));
-    //loadTex16col(this,small_explosion)
+    //loadTex16col(this,small_explosion_png)
     status = -1;
 
 

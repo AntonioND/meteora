@@ -8,44 +8,44 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 #include "CDecal.h"
 #include "CPixelDecal.h"
 
-#include "title.h"
+#include "title_png.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
-#include "spacebas_title.h"
+#include "spacebas_title_png.h"
 
-#include "explode.h"
+#include "explode_raw.h"
 #include "CPulseDecal.h"
 
-#include "touch_the_screen.h"
+#include "touch_the_screen_png.h"
 
-#include "menu_ambiant.h"
+#include "menu_ambiant_raw.h"
 
-#include "menu_haut.h"
-#include "menu_bas.h"
+#include "menu_haut_png.h"
+#include "menu_bas_png.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "GameScene.h"
 #include "HelpScene.h"
 #include "StoryScene.h"
 #include "MarathonScene.h"
 
-#include "story_1.h"
-#include "story_2.h"
-#include "story_3.h"
-#include "story_4.h"
-#include "story_5.h"
-#include "story_7.h"
+#include "story_1_png.h"
+#include "story_2_png.h"
+#include "story_3_png.h"
+#include "story_4_png.h"
+#include "story_5_png.h"
+#include "story_7_png.h"
 
-#include "story_final.h"
+#include "story_final_png.h"
 
-#include "cinematic_sound.h"
+#include "cinematic_sound_raw.h"
 
 #include "FadingDecal.h"
 
@@ -92,7 +92,7 @@ void SplashScreenScene::render() {
                        if (!fading) {
                             GameCtrl::getSharedObject()->addDecoSprite(new FadingDecal());
                             fading = 1;
-                            GC_playSound(error_sound);
+                            GC_playSound(error_sound_raw);
                         }
             }
 

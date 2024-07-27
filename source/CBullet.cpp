@@ -12,22 +12,22 @@
 #include <time.h>
 #include <math.h>
 
-#include "bullet.h"
-#include "bullet_small.h"
+#include "bullet_png.h"
+#include "bullet_small_png.h"
 
-#include "bullet_red.h"
-#include "bullet_small_red.h"
-#include "bullet_small_green.h"
-#include "bullet_small_yellow.h"
-#include "bullet_small_purple.h"
+#include "bullet_red_png.h"
+#include "bullet_small_red_png.h"
+#include "bullet_small_green_png.h"
+#include "bullet_small_yellow_png.h"
+#include "bullet_small_purple_png.h"
 
-#include "bullet_green.h"
-#include "bullet_yellow.h"
-#include "bullet_purple.h"
+#include "bullet_green_png.h"
+#include "bullet_yellow_png.h"
+#include "bullet_purple_png.h"
 
 #include "CPixelDecal.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
 #include "GameScene.h"
 
@@ -35,7 +35,7 @@
 
 #include "CScoreDecal.h"
 
-#include "pop.h"
+#include "pop_raw.h"
 
 #include "Modifier.h"
 #include "ModifierAddElec.h"
@@ -62,17 +62,17 @@ CBullet::CBullet(int owner) :CSpriteCollidable(0,0,0) {
     }
 
     if (owner == 1) { //load tex in fucntion of player
-            loadTex16col(this,bullet_small)
+            loadTex16col(this,bullet_small_png)
     } else if (owner == 2 ){
-            loadTex16col(this,bullet_small_red)
+            loadTex16col(this,bullet_small_red_png)
     } else if (owner == 3 ){
-            loadTex16col(this,bullet_small_green)
+            loadTex16col(this,bullet_small_green_png)
     } else if (owner == 4 ){
-            loadTex16col(this,bullet_small_yellow)
+            loadTex16col(this,bullet_small_yellow_png)
     } else if (owner == 5 ){
-            loadTex16col(this,bullet_small_purple)
+            loadTex16col(this,bullet_small_purple_png)
     } else {
-            loadTex16col(this,bullet_small)
+            loadTex16col(this,bullet_small_png)
     }
 
     electrified = 0;
@@ -137,7 +137,7 @@ void CBullet::thinking()
                 this->dead();
 
                 GameScene::mana = GameScene::mana + CFixed(this->weight);
-                GC_playSound(pop);
+                GC_playSound(pop_raw);
             }
         } else {
             if((int)y > ((int)GameScene::shield<10?416:376)) {//if ennemy bullet
@@ -247,29 +247,29 @@ void CBullet::setSize(double pSize, int forced) {
         if (pSize < 0.25) {
             this->size = pSize*4;
             if ((type&OWNER_MASK)==1) {
-                loadTex16col(this,bullet_small);
+                loadTex16col(this,bullet_small_png);
             } else if ((type&OWNER_MASK)==2) {
-                loadTex16col(this,bullet_small_red);
+                loadTex16col(this,bullet_small_red_png);
             } else if ((type&OWNER_MASK)==3) {
-                loadTex16col(this,bullet_small_green);
+                loadTex16col(this,bullet_small_green_png);
             } else if ((type&OWNER_MASK)==4) {
-                loadTex16col(this,bullet_small_yellow);
+                loadTex16col(this,bullet_small_yellow_png);
             } else if ((type&OWNER_MASK)==5) {
-                loadTex16col(this,bullet_small_purple);
+                loadTex16col(this,bullet_small_purple_png);
 
             }
         } else   {
             this->size = pSize;
             if ((type&OWNER_MASK)==1) {
-                loadTex16col(this,bullet);
+                loadTex16col(this,bullet_png);
             } else if ((type&OWNER_MASK)==2) {
-                loadTex16col(this,bullet_red);
+                loadTex16col(this,bullet_red_png);
             } else if ((type&OWNER_MASK)==3) {
-                loadTex16col(this,bullet_green);
+                loadTex16col(this,bullet_green_png);
             } else if ((type&OWNER_MASK)==4) {
-                loadTex16col(this,bullet_yellow);
+                loadTex16col(this,bullet_yellow_png);
             } else if ((type&OWNER_MASK)==5) {
-                loadTex16col(this,bullet_purple);
+                loadTex16col(this,bullet_purple_png);
             }
         }
     }

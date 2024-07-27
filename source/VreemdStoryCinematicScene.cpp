@@ -8,48 +8,48 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 #include "CDecal.h"
 #include "CPixelDecal.h"
 
-#include "title.h"
+#include "title_png.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
-#include "spacebas_title.h"
+#include "spacebas_title_png.h"
 
-#include "explode.h"
+#include "explode_raw.h"
 #include "CPulseDecal.h"
 
-#include "touch_the_screen.h"
+#include "touch_the_screen_png.h"
 
-#include "menu_ambiant.h"
+#include "menu_ambiant_raw.h"
 
-#include "menu_haut.h"
-#include "menu_bas.h"
+#include "menu_haut_png.h"
+#include "menu_bas_png.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "GameScene.h"
 #include "HelpScene.h"
 #include "StoryScene.h"
 #include "MarathonScene.h"
 
-#include "story_1.h"
-#include "story_2.h"
-#include "story_3.h"
-#include "story_4.h"
-#include "story_5.h"
-#include "story_7.h"
-#include "story_vreemd.h"
-#include "story_duplicate.h"
-#include "story_thedig.h"
-#include "story_thebrain.h"
+#include "story_1_png.h"
+#include "story_2_png.h"
+#include "story_3_png.h"
+#include "story_4_png.h"
+#include "story_5_png.h"
+#include "story_7_png.h"
+#include "story_vreemd_png.h"
+#include "story_duplicate_png.h"
+#include "story_thedig_png.h"
+#include "story_thebrain_png.h"
 
-#include "story_final.h"
+#include "story_final_png.h"
 
-#include "cinematic_sound.h"
+#include "cinematic_sound_raw.h"
 
 
 
@@ -74,21 +74,21 @@ void VreemdStoryCinematicScene::render() {
     string description2 = "";
 
     PA_StopSound(12);
-    PA_PlaySoundRepeat(12, cinematic_sound);
+    PA_PlaySoundRepeat(12, cinematic_sound_raw);
 
     /*CSprite * background_haut = new CSprite(128,96,0);
-    //loadTex16col(background_haut,menu_haut);
+    //loadTex16col(background_haut,menu_haut_png);
     loadTex(background_haut,title);
 
     CSprite * background_bas = new CSprite(128,192+32+96,0);
-    loadTex(background_bas,menu_bas)
+    loadTex(background_bas,menu_bas_png)
     */
 
     CSprite * scrapper = new CSprite(80,106,0);
 
     scrapper->setVelX(CFixed(0)+CFixed(0.2));
 
-    loadTex(scrapper,story_final);
+    loadTex(scrapper,story_final_png);
 
     gc->addDecoSprite(scrapper);
 
@@ -100,50 +100,50 @@ void VreemdStoryCinematicScene::render() {
 
 
     if (number ==1 ) {
-        loadTex(scrapper,story_vreemd);
+        loadTex(scrapper,story_vreemd_png);
         description = "This homebrew was sponsored";
         description2 = "by http://www.dev-fr.org ;)";
         ulSetImageTint(scrapper->spriteTex, RGB15(100,255,100));
     }
     if (number ==2 ) {
-        loadTex(scrapper,story_vreemd);
+        loadTex(scrapper,story_vreemd_png);
         ulSetImageTint(scrapper->spriteTex, RGB15(255,255,70));
         description = "Evil spoon";
         description2 = "Ahhhh a demoniac spoon !!";
     }
 
         if (number ==3 ) {
-        loadTex(scrapper,story_vreemd);
+        loadTex(scrapper,story_vreemd_png);
         description = "Schyzo";
         description2 = "Psychic power !!!";
     }
 
         if (number ==4 ) {
-        loadTex(scrapper,story_vreemd);
+        loadTex(scrapper,story_vreemd_png);
         description = "Reppa: go on";
         description2 = "http://reppa.ds-blog.com :D";
     }
 
     if (number ==5 ) {
-        loadTex(scrapper,story_vreemd);
+        loadTex(scrapper,story_vreemd_png);
         description = "Kukulcan,";
         description2= "master of quizz";
 
     }
     if (number ==6 ) {
-        loadTex(scrapper,story_vreemd);
+        loadTex(scrapper,story_vreemd_png);
         description = "T4ils";
         description2= "The honorable coder";
     }
     if (number ==7 ) {
-        loadTex(scrapper,story_vreemd);
+        loadTex(scrapper,story_vreemd_png);
         description = "Dr Mollusk";
         description2= "PALib Master";
     }
 
 
         if (number ==8 ) {
-        loadTex(scrapper,story_vreemd);
+        loadTex(scrapper,story_vreemd_png);
         description = "Do you think you can beat me ?";
         description2 = "http://scrutator.lo2k.net";
     }
@@ -165,7 +165,7 @@ void VreemdStoryCinematicScene::render() {
            if (ul_keys.held.touch&&(i>60)) {
 
                     CScene::stopScene();
-                    GC_playSound(error_sound);
+                    GC_playSound(error_sound_raw);
             }
 
 

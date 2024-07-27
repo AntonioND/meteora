@@ -8,17 +8,17 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
-#include "frostflame.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
+#include "frostflame_png.h"
 
-#include "explode.h"
-#include "big_boom.h"
+#include "explode_raw.h"
+#include "big_boom_raw.h"
 
 #include "../GameCtrl.h"
 
 ChargeShotLvl3::ChargeShotLvl3() : SpellItem() {
-    loadTex16col(this,frostflame)
+    loadTex16col(this,frostflame_png)
     //loadTex16col(this,small_explosion)
     status = -1;
     mana = 1200;

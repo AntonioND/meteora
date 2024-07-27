@@ -8,18 +8,18 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
-#include "frostflame_1.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
+#include "frostflame_1_png.h"
 
-#include "explode.h"
-#include "big_boom.h"
+#include "explode_raw.h"
+#include "big_boom_raw.h"
 
 #include "../GameCtrl.h"
 
 ChargeShotLvl2::ChargeShotLvl2() : SpellItem() {
-    loadTex16col(this,frostflame_1)
-    //loadTex16col(this,small_explosion)
+    loadTex16col(this,frostflame_1_png)
+    //loadTex16col(this,small_explosion_png)
     status = -1;
     mana = 100;
     interval = 40;

@@ -8,13 +8,13 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 
 
-#include "explode.h"
+#include "explode_raw.h"
 
-#include "debuglogger.h"
+#include "DebugLogger.h"
 
 string timeToString(int time) {
     ostringstream timeshow;

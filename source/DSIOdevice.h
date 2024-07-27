@@ -1,6 +1,8 @@
 #ifndef __DSIODEVICE_H__
 #define __DSIODEVICE_H__
 
+#include <nds/ndstypes.h>
+
 void DSIO_Init(void);
 
 bool DSIO_Connect(void);

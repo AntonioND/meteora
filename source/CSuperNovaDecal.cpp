@@ -10,14 +10,14 @@
 
 #include "GameScene.h"
 
-#include "meteor.h"
+#include "meteor_png.h"
 
 #include <cstdlib>
 #include <time.h>
 #include "math.h"
-#include "bullet.h"
+#include "bullet_png.h"
 
-#include "invoc_final_sound.h"
+#include "invoc_final_sound_raw.h"
 
 #include "DSIO.h"
 
@@ -32,7 +32,7 @@ CSuperNovaDecal::CSuperNovaDecal(int weight): CSprite() {
     //height = 50;
     color = RGB15(255,255,255);
 
-    GC_playSound(invoc_final_sound);
+    GC_playSound(invoc_final_sound_raw);
 
     GameScene::getInstance()->setEarthQuake(5);
     DSIO::ent()->rumbleOn();

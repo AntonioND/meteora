@@ -8,14 +8,14 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
-#include "menu_absorb.h"
-#include "scream.h"
-#include "multpleshotimg.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
+#include "menu_absorb_png.h"
+#include "scream_raw.h"
+#include "multpleshotimg_png.h"
 
-#include "explode.h"
-#include "big_boom.h"
+#include "explode_raw.h"
+#include "big_boom_raw.h"
 
 #include "../GameCtrl.h"
 #include "../GameScene.h"
@@ -26,8 +26,8 @@
 
 SacrificeSpell::SacrificeSpell() : SpellItem() {
     //ulDisableTransparentColor();
-    //#loadTex16col(this,trapattack)
-    loadTex16col(this,menu_absorb)
+    //#loadTex16col(this,trapattack_png)
+    loadTex16col(this,menu_absorb_png)
     //ulSetTransparentColor(RGB15(31, 0, 31));
     //loadTex16col(this,small_explosion)
     status = -1;
@@ -48,7 +48,7 @@ void SacrificeSpell::isPressed() {
         new ModifierBlast(tmpSprite); //add blast effect on all sprites.
     }*/
     
-    GC_playSound(scream);
+    GC_playSound(scream_raw);
     
     GameCtrl * gc = GameCtrl::getSharedObject();    
     

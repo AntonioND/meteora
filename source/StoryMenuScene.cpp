@@ -8,29 +8,29 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 #include "CDecal.h"
 #include "CPixelDecal.h"
 
-#include "title.h"
+#include "title_png.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
-#include "spacebas_title.h"
+#include "spacebas_title_png.h"
 
-#include "explode.h"
+#include "explode_raw.h"
 #include "CPulseDecal.h"
 #include "CTextDecal.h"
 
-#include "touch_the_screen.h"
+#include "touch_the_screen_png.h"
 
-#include "menu_ambiant.h"
+#include "menu_ambiant_raw.h"
 
-#include "menu_haut.h"
-#include "menu_bas_story.h"
+#include "menu_haut_png.h"
+#include "menu_bas_story_png.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "GameScene.h"
 #include "HelpScene.h"
@@ -42,7 +42,7 @@
 #include "InsaneStoryScene.h"
 #include "MarathonScene.h"
 
-#include "menu_locked.h"
+#include "menu_locked_png.h"
 
 #include "FadingDecal.h"
 
@@ -72,14 +72,14 @@ void StoryMenuScene::render() {
     gc->flushSprites();
 
 
-    PA_PlaySoundRepeat(15, menu_ambiant);
+    PA_PlaySoundRepeat(15, menu_ambiant_raw);
 
     CSprite * background_haut = new CSprite(128,96,0);
-    //loadTex16col(background_haut,menu_haut);
-    loadTex(background_haut,title);
+    //loadTex16col(background_haut,menu_haut_png);
+    loadTex(background_haut,title_png);
 
     CSprite * background_bas = new CSprite(128,192+32+96,0);
-    loadTex(background_bas,menu_bas_story)
+    loadTex(background_bas,menu_bas_story_png)
 
     /*gc->drawPersistentOnScreen(64,196+32+20,"easy");
     gc->drawPersistentOnScreen(64,196+32+90,"normal");
@@ -93,7 +93,7 @@ void StoryMenuScene::render() {
     if (SaveManager::ent()->getInt("StoryNormalFinish")==0) {
 
          locked = new CSprite(64+128,196+32+30);
-        loadTex16col(locked,menu_locked)
+        loadTex16col(locked,menu_locked_png)
 
         gc->addDecoSprite(locked);
     }
@@ -101,7 +101,7 @@ void StoryMenuScene::render() {
     if (SaveManager::ent()->getInt("StoryHardFinish")==0) {
 
         locked = new CSprite(64+128,196+32+97);
-        loadTex16col(locked,menu_locked)
+        loadTex16col(locked,menu_locked_png)
 
         gc->addDecoSprite(locked);
     }
@@ -303,7 +303,7 @@ void StoryMenuScene::render() {
                         if (!fading) {
                             GameCtrl::getSharedObject()->addDecoSprite(new FadingDecal());
                             fading = 1;
-                            GC_playSound(error_sound);
+                            GC_playSound(error_sound_raw);
                             this->nextScene = new EasyStoryScene();
                         }
 
@@ -317,7 +317,7 @@ void StoryMenuScene::render() {
                             if (!fading) {
                                 GameCtrl::getSharedObject()->addDecoSprite(new FadingDecal());
                                 fading = 1;
-                                GC_playSound(error_sound);
+                                GC_playSound(error_sound_raw);
                                 this->nextScene = new VreemdStoryScene();
                             }
                         }
@@ -334,7 +334,7 @@ void StoryMenuScene::render() {
                         if (!fading) {
                             GameCtrl::getSharedObject()->addDecoSprite(new FadingDecal());
                             fading = 1;
-                            GC_playSound(error_sound);
+                            GC_playSound(error_sound_raw);
                             this->nextScene = new StoryScene();
                         }
 
@@ -347,7 +347,7 @@ void StoryMenuScene::render() {
                         if (!fading) {
                             GameCtrl::getSharedObject()->addDecoSprite(new FadingDecal());
                             fading = 1;
-                            GC_playSound(error_sound);
+                            GC_playSound(error_sound_raw);
                             this->nextScene = new InsaneStoryScene();
                         }
                     }
@@ -364,7 +364,7 @@ void StoryMenuScene::render() {
                         if (!fading) {
                             GameCtrl::getSharedObject()->addDecoSprite(new FadingDecal());
                             fading = 1;
-                            GC_playSound(error_sound);
+                            GC_playSound(error_sound_raw);
                             this->nextScene = new HardStoryScene();
                         }
 
@@ -376,7 +376,7 @@ void StoryMenuScene::render() {
                         if (!fading) {
                             GameCtrl::getSharedObject()->addDecoSprite(new FadingDecal());
                             fading = 1;
-                            GC_playSound(error_sound);
+                            GC_playSound(error_sound_raw);
                             this->nextScene = new MenuScene();
                         }
 

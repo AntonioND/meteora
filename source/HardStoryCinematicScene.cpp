@@ -8,47 +8,47 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 #include "CDecal.h"
 #include "CPixelDecal.h"
 
-#include "title.h"
+#include "title_png.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
-#include "spacebas_title.h"
+#include "spacebas_title_png.h"
 
-#include "explode.h"
+#include "explode_raw.h"
 #include "CPulseDecal.h"
 
-#include "touch_the_screen.h"
+#include "touch_the_screen_png.h"
 
-#include "menu_ambiant.h"
+#include "menu_ambiant_raw.h"
 
-#include "menu_haut.h"
-#include "menu_bas.h"
+#include "menu_haut_png.h"
+#include "menu_bas_png.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "GameScene.h"
 #include "HelpScene.h"
 #include "StoryScene.h"
 #include "MarathonScene.h"
 
-#include "story_1.h"
-#include "story_2.h"
-#include "story_3.h"
-#include "story_4.h"
-#include "story_5.h"
-#include "story_7.h"
-#include "story_duplicate.h"
-#include "story_thedig.h"
-#include "story_thebrain.h"
+#include "story_1_png.h"
+#include "story_2_png.h"
+#include "story_3_png.h"
+#include "story_4_png.h"
+#include "story_5_png.h"
+#include "story_7_png.h"
+#include "story_duplicate_png.h"
+#include "story_thedig_png.h"
+#include "story_thebrain_png.h"
 
-#include "story_final.h"
+#include "story_final_png.h"
 
-#include "cinematic_sound.h"
+#include "cinematic_sound_raw.h"
 
 
 
@@ -73,7 +73,7 @@ void HardStoryCinematicScene::render() {
     string description2 = "";
 
     PA_StopSound(12);
-    PA_PlaySoundRepeat(12, cinematic_sound);
+    PA_PlaySoundRepeat(12, cinematic_sound_raw);
 
     /*CSprite * background_haut = new CSprite(128,96,0);
     //loadTex16col(background_haut,menu_haut);
@@ -87,7 +87,7 @@ void HardStoryCinematicScene::render() {
 
     scrapper->setVelX(CFixed(0)+CFixed(0.2));
 
-    loadTex(scrapper,story_final);
+    loadTex(scrapper,story_final_png);
 
     gc->addDecoSprite(scrapper);
 
@@ -99,49 +99,49 @@ void HardStoryCinematicScene::render() {
 
 
     if (number ==1 ) {
-        loadTex(scrapper,story_1);
+        loadTex(scrapper,story_1_png);
         description = "planet of evil toudouxmous,";
         description2= "Now they have weapons";
 
         ulSetImageTint(scrapper->spriteTex, RGB15(255,100,100));
     }
     if (number ==2 ) {
-        loadTex(scrapper,story_duplicate);
+        loadTex(scrapper,story_duplicate_png);
         description = "Duplicate that's that ?";
     }
     if (number ==3 ) {
-        loadTex(scrapper,story_thedig);
+        loadTex(scrapper,story_thedig_png);
         description = "A portal to an other world ?";
         description2= "seems to be cool ;)";
     }
     if (number ==4 ) {
-        loadTex(scrapper,story_duplicate);
+        loadTex(scrapper,story_duplicate_png);
         description = "Him ? Again ? Is it a mirror ?";
         description2 = "What the hell ?";
         ulSetImageTint(scrapper->spriteTex, RGB15(100,255,100));
     }
     if (number ==5 ) {
-        loadTex(scrapper,story_4);
+        loadTex(scrapper,story_4_png);
         ulSetImageTint(scrapper->spriteTex, RGB15(255,255,70));
         description = "Dark energy generator...";
         description2 = "Destroy the origin of evil energy";
     }
 
         if (number ==6 ) {
-        loadTex(scrapper,story_thebrain);
+        loadTex(scrapper,story_thebrain_png);
         description = "I think...";
         description2 = "He's not so stupid...";
     }
 
         if (number ==7 ) {
-        loadTex(scrapper,story_duplicate);
+        loadTex(scrapper,story_duplicate_png);
         description = "AAARHHHH...";
         description2 = "Finish him...";
         ulSetImageTint(scrapper->spriteTex, RGB15(255,100,100));
     }
 
         if (number ==8 ) {
-        loadTex(scrapper,story_final);
+        loadTex(scrapper,story_final_png);
         description = "The source of all evil";
         description2 = "BEWARE !!!!";
     }
@@ -163,7 +163,7 @@ void HardStoryCinematicScene::render() {
            if (ul_keys.held.touch&&(i>60)) {
 
                     CScene::stopScene();
-                    GC_playSound(error_sound);
+                    GC_playSound(error_sound_raw);
             }
 
 

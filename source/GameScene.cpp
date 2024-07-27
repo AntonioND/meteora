@@ -8,14 +8,14 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 
-#include "explode.h"
+#include "explode_raw.h"
 
-#include "beavis2_music.h"
+#include "beavis2_music_raw.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "SpellItems/SpellItem.h"
 #include "SpellItems/MultipleShot.h"
@@ -34,29 +34,29 @@
 #include "GameCtrl.h"
 
 #include "ScoreScene.h"
-#include "icyplanet.h"
-#include "redplanet.h"
+#include "icyplanet_png.h"
+#include "redplanet_png.h"
 
-#include "spacebas_hires.h"
+#include "spacebas_hires_png.h"
 
-#include "player_hud_pic.h"
-#include "player_hud_jam_pic.h"
+#include "player_hud_pic_png.h"
+#include "player_hud_jam_pic_png.h"
 
-#include "ennemy_hud_pic.h"
-#include "ennemy_hud_jam_pic.h"
+#include "ennemy_hud_pic_png.h"
+#include "ennemy_hud_jam_pic_png.h"
 
-#include "bullet_small.h"
+#include "bullet_small_png.h"
 
-#include "protect.h"
+#include "protect_png.h"
 
 #include "CFlashDecal.h"
 #include "FadingDecal.h"
 
 #include "CDeconcentrate.h"
 
-#include "invoc_final_sound.h"
+#include "invoc_final_sound_raw.h"
 
-#include "meteor.h"
+#include "meteor_png.h"
 
 
 CFixed GameScene::mana;
@@ -155,7 +155,7 @@ void GameScene::damage(CFixed dmg, CSprite * s) {
                 bulletY->setVel(0,0);
                 bulletY->nextThink =1;
                 bulletY->layer = 6;
-                loadTex16col(bulletY,protect)
+                loadTex16col(bulletY,protect_png)
 
                 GameCtrl::getSharedObject()->addDecoSprite(bulletY);
 
@@ -416,14 +416,14 @@ void GameScene::render() {
    // if ((PA_Rand()%2)==1) {
         PA_StopSound(15);
 
-        PA_PlaySoundRepeat(15, beavis2_music);
+        PA_PlaySoundRepeat(15, beavis2_music_raw);
     //} else {
       //  PA_PlaySoundRepeat(15, suckers_music);
     //}
 
         //cursor definition
     CSprite * cursor = new CSprite(); //cursor
-    loadTex16col(cursor,bullet_small);
+    loadTex16col(cursor,bullet_small_png);
     cursor->size = 4;
 
 
@@ -431,19 +431,19 @@ void GameScene::render() {
     //HUD DEFINITION
 
     player_hud = new CSprite(128,90,0);
-    loadTex16col(player_hud,player_hud_pic);
+    loadTex16col(player_hud,player_hud_pic_png);
     player_hud->x=256-60;
     player_hud->y=32;
 
     ennemy_hud = new CSprite(128,90,0);
-    loadTex16col(ennemy_hud,ennemy_hud_pic);
+    loadTex16col(ennemy_hud,ennemy_hud_pic_png);
     ennemy_hud->x=55;
     ennemy_hud->y=32;
 
 
     player_hud_jam = new CSprite();
     player_hud_jam->mFrameNumber = 3;
-    loadTex16col(player_hud_jam,player_hud_jam_pic);
+    loadTex16col(player_hud_jam,player_hud_jam_pic_png);
     player_hud_jam->x=256-60;
     player_hud_jam->y=29;
 
@@ -451,7 +451,7 @@ void GameScene::render() {
 
     ennemy_hud_jam = new CSprite();
     ennemy_hud_jam->mFrameNumber = 2;
-    loadTex16col(ennemy_hud_jam,ennemy_hud_jam_pic);
+    loadTex16col(ennemy_hud_jam,ennemy_hud_jam_pic_png);
     ennemy_hud_jam->x=55;
     ennemy_hud_jam->y=29;
     //ennemy_hud_jam->layer = 4;
@@ -465,15 +465,15 @@ void GameScene::render() {
 
     if (background_haut == NULL) {
         background_haut = new CSprite(128,96,0);
-        loadTex16col(background_haut,spacehaut)
+        loadTex16col(background_haut,spacehaut_png)
     }
 
     if (background_bas == NULL) {
         background_basHQ = new CSprite(128,192+32+148,0);
-        loadTex(background_basHQ,spacebas_hires)
+        loadTex(background_basHQ,spacebas_hires_png)
 
         background_bas = new CSprite(128,192+32+96,0);
-        loadTex16col(background_bas,spacebas)
+        loadTex16col(background_bas,spacebas_png)
     } else {
         //make it invisible
         background_basHQ = new CSprite(128,192+32+148+100,0);
@@ -702,11 +702,11 @@ void GameScene::render() {
 
 
 
-            //PA_CloseLidSound  	(  1,  invoc_final_sound )
+            //PA_CloseLidSound  	(  1,  invoc_final_sound_raw )
 
 
 		   if (ul_keys.held.start) {
-               GC_playSound(invoc_final_sound);
+               GC_playSound(invoc_final_sound_raw);
 
                UL_MSGBOX_BUTTON buttons[2] = {
 			    {UL_KEY_A, "A: Continue"},
@@ -729,7 +729,7 @@ void GameScene::render() {
 		   	    }
 
 		   	} else {
-                GC_playSound(invoc_final_sound);
+                GC_playSound(invoc_final_sound_raw);
 
 
                 GameCtrl::getSharedObject()->addDecoSprite(new CFlashDecal());

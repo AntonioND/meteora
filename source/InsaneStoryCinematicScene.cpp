@@ -8,48 +8,48 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 #include "CDecal.h"
 #include "CPixelDecal.h"
 
-#include "title.h"
+#include "title_png.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
-#include "spacebas_title.h"
+#include "spacebas_title_png.h"
 
-#include "explode.h"
+#include "explode_raw.h"
 #include "CPulseDecal.h"
 
-#include "touch_the_screen.h"
+#include "touch_the_screen_png.h"
 
-#include "menu_ambiant.h"
+#include "menu_ambiant_raw.h"
 
-#include "menu_haut.h"
-#include "menu_bas.h"
+#include "menu_haut_png.h"
+#include "menu_bas_png.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "GameScene.h"
 #include "HelpScene.h"
 #include "StoryScene.h"
 #include "MarathonScene.h"
 
-#include "story_1.h"
-#include "story_2.h"
-#include "story_3.h"
-#include "story_4.h"
-#include "story_5.h"
-#include "story_7.h"
-#include "story_vreemd.h"
-#include "story_duplicate.h"
-#include "story_thedig.h"
-#include "story_thebrain.h"
+#include "story_1_png.h"
+#include "story_2_png.h"
+#include "story_3_png.h"
+#include "story_4_png.h"
+#include "story_5_png.h"
+#include "story_7_png.h"
+#include "story_vreemd_png.h"
+#include "story_duplicate_png.h"
+#include "story_thedig_png.h"
+#include "story_thebrain_png.h"
 
-#include "story_insane.h"
+#include "story_insane_png.h"
 
-#include "cinematic_sound.h"
+#include "cinematic_sound_raw.h"
 
 
 
@@ -74,7 +74,7 @@ void InsaneStoryCinematicScene::render() {
     string description2 = "";
 
     PA_StopSound(12);
-    PA_PlaySoundRepeat(12, cinematic_sound);
+    PA_PlaySoundRepeat(12, cinematic_sound_raw);
 
     /*CSprite * background_haut = new CSprite(128,96,0);
     //loadTex16col(background_haut,menu_haut);
@@ -88,7 +88,7 @@ void InsaneStoryCinematicScene::render() {
 
     scrapper->setVelX(CFixed(0)+CFixed(0.2));
 
-    loadTex(scrapper,story_insane);
+    loadTex(scrapper,story_insane_png);
 
     gc->addDecoSprite(scrapper);
 
@@ -98,13 +98,13 @@ void InsaneStoryCinematicScene::render() {
 
 
 
-    loadTex(scrapper,story_insane);
+    loadTex(scrapper,story_insane_png);
 
 
      ostringstream lvldesc;
     lvldesc << "insane level "<< (int)number;
     
-    loadTex(scrapper,story_insane);
+    loadTex(scrapper,story_insane_png);
     description = lvldesc.str();
 
 
@@ -126,7 +126,7 @@ void InsaneStoryCinematicScene::render() {
            if (ul_keys.held.touch&&(i>60)) {
 
                     CScene::stopScene();
-                    GC_playSound(error_sound);
+                    GC_playSound(error_sound_raw);
             }
 
 

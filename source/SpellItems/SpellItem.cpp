@@ -12,13 +12,13 @@
 #include <stdlib.h>
 
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 
-#include "explode.h"
-#include "big_boom.h"
+#include "explode_raw.h"
+#include "big_boom_raw.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "../GameCtrl.h"
 
@@ -99,7 +99,7 @@ short int SpellItem::testCollision(int styletX, int styletY) {
      }
 
      if ((int)GameScene::mana < (int) this->mana) {
-         GC_playSound(error_sound);
+         GC_playSound(error_sound_raw);
          lastPressed += 5;
          return false;
      }

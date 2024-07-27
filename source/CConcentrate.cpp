@@ -8,14 +8,14 @@
 #include "GameCtrl.h"
 #include "CExplosion.h"
 
-#include "meteor.h"
+#include "meteor_png.h"
 
 #include <cstdlib>
 #include <time.h>
 #include "math.h"
-#include "bullet.h"
+#include "bullet_png.h"
 
-#include "concentrate.h"
+#include "concentrate_png.h"
 
 
 CConcentrate::CConcentrate(): CSprite() {
@@ -23,7 +23,7 @@ CConcentrate::CConcentrate(): CSprite() {
     alpha = 8;
     nextThink = 1;
     layer = 1;
-    loadTex16col(this,concentrate);
+    loadTex16col(this,concentrate_png);
     decSize = 0.5;
     size = 4;
 }

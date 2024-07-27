@@ -23,7 +23,7 @@
 #include "ModifierShrapnel.h"
 
 //sound
-#include "launch.h"
+#include "launch_raw.h"
 
 #include "ennemyIA/EnnemyMultipleShotsManager.h"
 
@@ -88,7 +88,7 @@ void CSimpleAI::thinking()
 
         GameCtrl::getSharedObject()->addSprite(bulletS);
 
-        GC_playSound(launch);
+        GC_playSound(launch_raw);
         nextThink = (15+PA_Rand()%40)* reactivity;
      }
 
@@ -110,7 +110,7 @@ void CSimpleAI::thinking()
 
             GameCtrl::getSharedObject()->addSprite(bulletS);
 
-             GC_playSound(launch);
+             GC_playSound(launch_raw);
              nextThink = (15+PA_Rand()%40)* reactivity;
             } else {
                     nextThink = 0;
@@ -136,7 +136,7 @@ void CSimpleAI::thinking()
 
         mat = new ModifierAddTrailer(bulletS);
 
-         GC_playSound(launch);
+         GC_playSound(launch_raw);
          nextThink = (15+PA_Rand()%40)* reactivity;
         } else {
                 nextThink = 0;
@@ -183,7 +183,7 @@ void CSimpleAI::thinking()
 
         mat = new ModifierAddTrailer(bulletS);
 
-         GC_playSound(launch);
+         GC_playSound(launch_raw);
          nextThink = (15+PA_Rand()%40)* reactivity;
         } else {
                 nextThink = 0;

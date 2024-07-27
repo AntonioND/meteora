@@ -22,7 +22,7 @@
 #include "ModifierAddTrailer.h"
 
 //sound
-#include "launch.h"
+#include "launch_raw.h"
 
 #include "ennemyIA/EnnemyMultipleShotsManager.h"
 

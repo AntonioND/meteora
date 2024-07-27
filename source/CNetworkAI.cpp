@@ -22,7 +22,7 @@
 #include "ModifierAddTrailer.h"
 
 //sound
-#include "launch.h"
+#include "launch_raw.h"
 
 #include "ennemyIA/EnnemyMultipleShotsManager.h"
 
@@ -31,7 +31,7 @@
 
 #include "FadingDecal.h"
 
-#include "invoc_final_sound.h"
+#include "invoc_final_sound_raw.h"
 
 #include "CFlashDecal.h"
 
@@ -90,6 +90,8 @@ void wifiInit() {
 
   *((volatile u16 *)0x0400010E) = 0; // disable timer3
 
+#if 0
+  // TODO: Re-enable
   irqSet(IRQ_TIMER3, Timer_50ms); // setup timer IRQ
   irqEnable(IRQ_TIMER3);
   irqSet(IRQ_FIFO_NOT_EMPTY, arm9_fifo); // setup fifo IRQ
@@ -98,7 +100,7 @@ void wifiInit() {
   REG_IPC_FIFO_CR = IPC_FIFO_ENABLE | IPC_FIFO_RECV_IRQ; // enable FIFO IRQ
 
   Wifi_SetSyncHandler(arm9_synctoarm7); // tell wifi lib to use our handler to notify arm7
-
+#endif
   // set timer3
   *((volatile u16 *)0x0400010C) = -6553; // 6553.1 * 256 cycles = ~50ms;
   *((volatile u16 *)0x0400010E) = 0x00C2; // enable, irq, 1/256 clock
@@ -320,7 +322,7 @@ void CNetworkAI::interpret(string s) {
 
         textDecal->dead();
 
-        GC_playSound(invoc_final_sound);
+        GC_playSound(invoc_final_sound_raw);
 
 
         GameCtrl::getSharedObject()->addDecoSprite(new CFlashDecal());
@@ -340,7 +342,7 @@ void CNetworkAI::interpret(string s) {
             new ModifierAddTrailer(s);
 
             GameCtrl::getSharedObject()->addSprite(s);
-            GC_playSound(launch);
+            GC_playSound(launch_raw);
     } else if (command=="update") {
             GameScene::ennemy_life = CFixed(StrToInt(args[1]));
             GameScene::ennemy_shield = CFixed(StrToInt(args[2]));

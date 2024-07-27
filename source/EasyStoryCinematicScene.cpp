@@ -8,48 +8,48 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 #include "CDecal.h"
 #include "CPixelDecal.h"
 
-#include "title.h"
+#include "title_png.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
-#include "spacebas_title.h"
+#include "spacebas_title_png.h"
 
-#include "explode.h"
+#include "explode_raw.h"
 #include "CPulseDecal.h"
 
-#include "touch_the_screen.h"
+#include "touch_the_screen_png.h"
 
-#include "menu_ambiant.h"
+#include "menu_ambiant_raw.h"
 
-#include "menu_haut.h"
-#include "menu_bas.h"
+#include "menu_haut_png.h"
+#include "menu_bas_png.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "GameScene.h"
 #include "HelpScene.h"
 #include "StoryScene.h"
 #include "MarathonScene.h"
 
-#include "story_1.h"
-#include "story_2.h"
-#include "story_3.h"
-#include "story_4.h"
-#include "story_5.h"
-#include "story_7.h"
+#include "story_1_png.h"
+#include "story_2_png.h"
+#include "story_3_png.h"
+#include "story_4_png.h"
+#include "story_5_png.h"
+#include "story_7_png.h"
 
-#include "story_final.h"
+#include "story_final_png.h"
 
-#include "story_duplicate.h"
-#include "story_thedig.h"
-#include "story_thebrain.h"
+#include "story_duplicate_png.h"
+#include "story_thedig_png.h"
+#include "story_thebrain_png.h"
 
-#include "cinematic_sound.h"
+#include "cinematic_sound_raw.h"
 
 
 
@@ -74,7 +74,7 @@ void EasyStoryCinematicScene::render() {
     string description2 = "";
 
     PA_StopSound(12);
-    PA_PlaySoundRepeat(12, cinematic_sound);
+    PA_PlaySoundRepeat(12, cinematic_sound_raw);
 
     /*CSprite * background_haut = new CSprite(128,96,0);
     //loadTex16col(background_haut,menu_haut);
@@ -88,7 +88,7 @@ void EasyStoryCinematicScene::render() {
 
     scrapper->setVelX(CFixed(0)+CFixed(0.2));
 
-    loadTex(scrapper,story_final);
+    loadTex(scrapper,story_final_png);
 
     gc->addDecoSprite(scrapper);
 
@@ -100,28 +100,28 @@ void EasyStoryCinematicScene::render() {
 
 
     if (number ==1 ) {
-        loadTex(scrapper,story_1);
+        loadTex(scrapper,story_1_png);
         description = "planet of toudouxmous,";
         description2= "They sleep, atttack and destroy";
     }
     if (number ==2 ) {
-        loadTex(scrapper,story_duplicate);
+        loadTex(scrapper,story_duplicate_png);
         description = "Hmm this planet seems to be down";
         description2= "Just a piece of cake...";
     }
     if (number ==3 ) {
-        loadTex(scrapper,story_1);
+        loadTex(scrapper,story_1_png);
         description = "Revange of toudouxmous";
         description2= "be carefull they attack with sweets";
         ulSetImageTint(scrapper->spriteTex, RGB15(255,100,100));
     }
     if (number ==4 ) {
-        loadTex(scrapper,story_4);
+        loadTex(scrapper,story_4_png);
         description = "Do you think it's a problem ?";
         ulSetImageTint(scrapper->spriteTex, RGB15(100,255,100));
     }
     if (number ==5 ) {
-        loadTex(scrapper,story_2);
+        loadTex(scrapper,story_2_png);
         description = "Cool man !!";
         ulSetImageTint(scrapper->spriteTex, RGB15(100,255,100));
     }
@@ -143,7 +143,7 @@ void EasyStoryCinematicScene::render() {
            if (ul_keys.held.touch&&(i>60)) {
 
                     CScene::stopScene();
-                    GC_playSound(error_sound);
+                    GC_playSound(error_sound_raw);
             }
 
 

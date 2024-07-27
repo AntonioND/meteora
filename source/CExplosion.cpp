@@ -8,11 +8,11 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 
-#include "explode.h"
-#include "big_boom.h"
+#include "explode_raw.h"
+#include "big_boom_raw.h"
 
 #include "GameCtrl.h"
 
@@ -21,13 +21,13 @@ CExplosion::CExplosion(int pSize) :CSprite(0,0,0,7) {
     nextThink = 3;
 
     if (this->size>8) {
-         loadTex16col(this,explosion)
-         GC_playSound(big_boom);
+         loadTex16col(this,explosion_png)
+         GC_playSound(big_boom_raw);
          size = pSize * 2;
 
     } else {
-        loadTex16col(this,small_explosion)
-        GC_playSound(explode);
+        loadTex16col(this,small_explosion_png)
+        GC_playSound(explode_raw);
     }
 
 

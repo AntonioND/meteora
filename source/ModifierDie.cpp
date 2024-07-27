@@ -21,7 +21,7 @@
 #include "GameScene.h"
 
 #include "CConcentrate.h"
-#include "launch.h"
+#include "launch_raw.h"
 
 
 ModifierDie::ModifierDie(CSprite * _parent) :Modifier(_parent) {

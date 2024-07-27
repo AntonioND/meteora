@@ -8,7 +8,7 @@
 #include "GameCtrl.h"
 #include "CExplosion.h"
 
-#include "meteor.h"
+#include "meteor_png.h"
 
 #include <cstdlib>
 #include <time.h>

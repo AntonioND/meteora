@@ -8,24 +8,24 @@
 #include "GameCtrl.h"
 #include "CExplosion.h"
 
-#include "meteor.h"
+#include "meteor_png.h"
 
 #include <cstdlib>
 #include <time.h>
 #include "math.h"
-#include "bullet.h"
+#include "bullet_png.h"
 
 #include "CBullet.h"
 
 #include "GameScene.h"
 
-#include "bullet_lumi.h"
+#include "bullet_lumi_png.h"
 
 
 
 
-#include "invoc_sound.h"
-#include "invoc_final_sound.h"
+#include "invoc_sound_raw.h"
+#include "invoc_final_sound_raw.h"
 
 #include "CFlashDecal.h"
 #include "CPixelDecal.h"
@@ -43,7 +43,7 @@ CAlchemySpell::CAlchemySpell(): CSpriteCollidable(0,0,0) {
     x = CFixed(80);
     y = CFixed(192+32+120);
 
-    loadTex16col(this,bullet_lumi);
+    loadTex16col(this,bullet_lumi_png);
 
 
 }
@@ -112,7 +112,7 @@ void CAlchemySpell::clicked(int px, int py){
 
     if (nbclicked ==1) {
         y = CFixed(192+32+40);
-        GC_playSound(invoc_sound);
+        GC_playSound(invoc_sound_raw);
         CLineDecal * bulletS; //add a blank flash
         bulletS = new CLineDecal();
         bulletS->x1 = 80;
@@ -126,7 +126,7 @@ void CAlchemySpell::clicked(int px, int py){
 
     if (nbclicked ==2) {
         y = CFixed(192+32+120);
-        GC_playSound(invoc_sound);
+        GC_playSound(invoc_sound_raw);
 
         CLineDecal * bulletS; //add a blank flash
         bulletS = new CLineDecal();
@@ -162,7 +162,7 @@ void CAlchemySpell::clicked(int px, int py){
         GameCtrl::getSharedObject()->drawOnScreen(128,96,"change side spell");
         this->dead();
 
-        GC_playSound(invoc_final_sound);
+        GC_playSound(invoc_final_sound_raw);
 
 
         CFlashDecal * bulletS; //add a blank flash

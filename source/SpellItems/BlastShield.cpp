@@ -8,13 +8,13 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
-#include "repell.h"
-#include "multpleshotimg.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
+#include "repell_png.h"
+#include "multpleshotimg_png.h"
 
-#include "explode.h"
-#include "big_boom.h"
+#include "explode_raw.h"
+#include "big_boom_raw.h"
 
 #include "../GameCtrl.h"
 #include "../GameScene.h"
@@ -25,10 +25,10 @@
 
 BlastShield::BlastShield() : SpellItem() {
     ulDisableTransparentColor();
-    //#loadTex16col(this,trapattack)
-    loadTex16col(this,repell)
+    //#loadTex16col(this,trapattack_png)
+    loadTex16col(this,repell_png)
     ulSetTransparentColor(RGB15(31, 0, 31));
-    //loadTex16col(this,small_explosion)
+    //loadTex16col(this,small_explosion_png)
     status = -1;
 
     mana = 90;

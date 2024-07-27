@@ -8,25 +8,25 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 #include "CDecal.h"
 #include "CPixelDecal.h"
 
-#include "title.h"
+#include "title_png.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
-#include "spacebas_title.h"
+#include "spacebas_title_png.h"
 
-#include "explode.h"
+#include "explode_raw.h"
 #include "CPulseDecal.h"
 
-#include "touch_the_screen.h"
+#include "touch_the_screen_png.h"
 
-#include "menu_ambiant.h"
+#include "menu_ambiant_raw.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "MenuScene.h"
 
@@ -45,7 +45,7 @@ void HelpScene::render() {
     gc->flushSprites();
 
 
-    PA_PlaySoundRepeat(12, menu_ambiant);
+    PA_PlaySoundRepeat(12, menu_ambiant_raw);
 
     CSprite * background_haut = new CSprite(128,96,0);
 //    loadTex(background_haut,tutorial_haut);
@@ -68,7 +68,7 @@ void HelpScene::render() {
                     if (i>30) {
                         CScene::stopScene();
                         nextScene = new MenuScene();
-                        GC_playSound(error_sound);
+                        GC_playSound(error_sound_raw);
                     }
                     //this->nextScene = new GameScene();
                 }

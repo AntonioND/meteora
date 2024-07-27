@@ -8,10 +8,10 @@
 #include "CBullet.h"
 #include "CExplosion.h"
 
-#include "bullet.h"
-#include "meteor.h"
-#include "spacebas.h"
-#include "spacehaut.h"
+#include "bullet_png.h"
+#include "meteor_png.h"
+#include "spacebas_png.h"
+#include "spacehaut_png.h"
 
 
 #include <sstream>

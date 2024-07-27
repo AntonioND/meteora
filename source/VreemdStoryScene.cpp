@@ -8,28 +8,28 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 #include "CDecal.h"
 #include "CPixelDecal.h"
 
-#include "title.h"
+#include "title_png.h"
 
-#include "crap_small.h"
+#include "crap_small_png.h"
 
-#include "spacebas_title.h"
+#include "spacebas_title_png.h"
 
-#include "explode.h"
+#include "explode_raw.h"
 #include "CPulseDecal.h"
 
-#include "touch_the_screen.h"
+#include "touch_the_screen_png.h"
 
-#include "menu_ambiant.h"
+#include "menu_ambiant_raw.h"
 
-#include "menu_haut.h"
-#include "menu_bas.h"
+#include "menu_haut_png.h"
+#include "menu_bas_png.h"
 
-#include "error_sound.h"
+#include "error_sound_raw.h"
 
 #include "HelpScene.h"
 #include "GameScene.h"
@@ -44,30 +44,30 @@
 
 #include "SplashScreenScene.h"
 
-#include "congrat_img.h"
+#include "congrat_img_png.h"
 
 #include "SaveManager.h"
 
 
-#include "vreemd_haut_reppa.h"
-#include "vreemd_haut_schyzo.h"
+#include "vreemd_haut_reppa_png.h"
+#include "vreemd_haut_schyzo_png.h"
 
-#include "vreemd_haut_evilspoon.h"
-#include "vreemd_bas_evilspoon.h"
+#include "vreemd_haut_evilspoon_png.h"
+#include "vreemd_bas_evilspoon_png.h"
 
-#include "vreemd_haut_kuku.h"
-#include "vreemd_bas_kuku.h"
+#include "vreemd_haut_kuku_png.h"
+#include "vreemd_bas_kuku_png.h"
 
-#include "vreemd_haut_t4ils.h"
-#include "vreemd_bas_t4ils.h"
+#include "vreemd_haut_t4ils_png.h"
+#include "vreemd_bas_t4ils_png.h"
 
-#include "vreemd_haut_xb.h"
-#include "vreemd_bas_xb.h"
+#include "vreemd_haut_xb_png.h"
+#include "vreemd_bas_xb_png.h"
 
-#include "splash_haut.h"
-#include "splash_bas.h"
+#include "splash_haut_png.h"
+#include "splash_bas_png.h"
 
-#include "vreemd_bas_momo.h"
+#include "vreemd_bas_momo_png.h"
 
 CSimpleAI * VreemdStoryScene::generateAI(int level) {
     CSimpleAI * ennemy_ai = NULL;
@@ -76,10 +76,10 @@ CSimpleAI * VreemdStoryScene::generateAI(int level) {
 
         //end change background
       game->background_haut = new CSprite(128,96,0);
-        loadTex(game->background_haut,splash_haut)
+        loadTex(game->background_haut,splash_haut_png)
 
         game->background_bas = new CSprite(128,192+32+96,0);
-        loadTex(game->background_bas,splash_bas)
+        loadTex(game->background_bas,splash_bas_png)
 
 
         ennemy_ai = new CVreemdAI();
@@ -101,10 +101,10 @@ CSimpleAI * VreemdStoryScene::generateAI(int level) {
      if (level == 2) {
 
         game->background_haut = new CSprite(128,96,0);
-        loadTex(game->background_haut,vreemd_haut_evilspoon)
+        loadTex(game->background_haut,vreemd_haut_evilspoon_png)
 
         game->background_bas = new CSprite(128,192+32+96,0);
-        loadTex(game->background_bas,vreemd_bas_evilspoon)
+        loadTex(game->background_bas,vreemd_bas_evilspoon_png)
 
         ennemy_ai = new CVreemdAI();
         ennemy_ai->probaTotalStop = 0;
@@ -126,7 +126,7 @@ CSimpleAI * VreemdStoryScene::generateAI(int level) {
          if (level == 3) {
 
         game->background_haut = new CSprite(128,96,0);
-        loadTex(game->background_haut,vreemd_haut_schyzo)
+        loadTex(game->background_haut,vreemd_haut_schyzo_png)
 
         ennemy_ai = new CVreemdAI();
         ennemy_ai->probaTotalStop = 15;
@@ -146,7 +146,7 @@ CSimpleAI * VreemdStoryScene::generateAI(int level) {
     }     if (level == 4) {
 
         game->background_haut = new CSprite(128,96,0);
-        loadTex(game->background_haut,vreemd_haut_reppa)
+        loadTex(game->background_haut,vreemd_haut_reppa_png)
 
         ennemy_ai = new CVreemdAI();
         ennemy_ai->probaTotalStop = 10;
@@ -166,10 +166,10 @@ CSimpleAI * VreemdStoryScene::generateAI(int level) {
     }     if (level == 5) {
                 //change background
         game->background_haut = new CSprite(128,96,0);
-        loadTex(game->background_haut,vreemd_haut_kuku)
+        loadTex(game->background_haut,vreemd_haut_kuku_png)
 
          game->background_bas = new CSprite(128,192+32+96,0);
-         loadTex(game->background_bas,vreemd_bas_kuku)
+         loadTex(game->background_bas,vreemd_bas_kuku_png)
         ennemy_ai = new CVreemdAI();
         ennemy_ai->probaTotalStop = 10;
         ennemy_ai->probaPartialDmg = 55;
@@ -187,10 +187,10 @@ CSimpleAI * VreemdStoryScene::generateAI(int level) {
 
     }     if (level == 6) {
                  game->background_haut = new CSprite(128,96,0);
-        loadTex(game->background_haut,vreemd_haut_t4ils)
+        loadTex(game->background_haut,vreemd_haut_t4ils_png)
 
          game->background_bas = new CSprite(128,192+32+96,0);
-         loadTex(game->background_bas,vreemd_bas_t4ils)
+         loadTex(game->background_bas,vreemd_bas_t4ils_png)
 
 
         ennemy_ai = new CVreemdAI();
@@ -210,10 +210,10 @@ CSimpleAI * VreemdStoryScene::generateAI(int level) {
 
     }     if (level == 7) {
                               game->background_haut = new CSprite(128,96,0);
-        loadTex(game->background_haut,vreemd_bas_momo)
+        loadTex(game->background_haut,vreemd_bas_momo_png)
 
          game->background_bas = new CSprite(128,192+32+96,0);
-         loadTex(game->background_haut,vreemd_bas_momo)
+         loadTex(game->background_haut,vreemd_bas_momo_png)
         ennemy_ai = new CVreemdAI();
         ennemy_ai->probaTotalStop = 15;
         ennemy_ai->probaPartialDmg = 55;
@@ -235,10 +235,10 @@ CSimpleAI * VreemdStoryScene::generateAI(int level) {
 
      if (level == 8) {
                  game->background_haut = new CSprite(128,96,0);
-        loadTex(game->background_haut,vreemd_haut_xb)
+        loadTex(game->background_haut,vreemd_haut_xb_png)
 
          game->background_bas = new CSprite(128,192+32+96,0);
-         loadTex(game->background_bas,vreemd_bas_xb)
+         loadTex(game->background_bas,vreemd_bas_xb_png)
 
         ennemy_ai = new CVreemdAI();
         ennemy_ai->probaTotalStop = 15;
@@ -294,7 +294,7 @@ void VreemdStoryScene::displayCongrat() {
 
         CSprite * background_haut = new CSprite(128,96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex(background_haut,congrat_img);
+        loadTex(background_haut,congrat_img_png);
 
         splash->addSprite(background_haut);
 
@@ -315,7 +315,7 @@ void VreemdStoryScene::displayCongrat() {
 
         CSprite * background_haut2 = new CSprite(128,96,0);
         //loadTex16col(background_haut,menu_haut);
-        loadTex(background_haut,congrat_img);
+        loadTex(background_haut,congrat_img_png);
 
         splash2->addSprite(background_haut);
 

@@ -8,20 +8,20 @@
 
 #include <cstdlib>
 #include <time.h>
-#include "explosion.h"
-#include "small_explosion.h"
+#include "explosion_png.h"
+#include "small_explosion_png.h"
 
-#include "explode.h"
-#include "big_boom.h"
+#include "explode_raw.h"
+#include "big_boom_raw.h"
 
 #include "GameCtrl.h"
 
-#include "elec_effect.h"
+#include "elec_effect_png.h"
 
 CElecDecal::CElecDecal() :CSprite(0,0,0,10) {
     nextThink = 5;
 
-    loadTex16col(this,elec_effect)
+    loadTex16col(this,elec_effect_png)
     //GC_playSound(explode);
 
     count = 0;

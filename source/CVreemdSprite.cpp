@@ -8,20 +8,20 @@
 #include "GameCtrl.h"
 #include "CExplosion.h"
 
-#include "meteor.h"
+#include "meteor_png.h"
 
 #include <cstdlib>
 #include <time.h>
 #include "math.h"
-#include "bullet.h"
+#include "bullet_png.h"
 
-#include "small_pix.h"
-#include "crap_small.h"
+#include "small_pix_png.h"
+#include "crap_small_png.h"
 #include "CPixelDecal.h"
 
-#include "vreemd_metroid.h"
-#include "vreemd_supermario.h"
-#include "vreemd_yoshi.h"
+#include "vreemd_metroid_png.h"
+#include "vreemd_supermario_png.h"
+#include "vreemd_yoshi_png.h"
 
 #include "GameScene.h"
 
@@ -41,13 +41,13 @@ CVreemdSprite::CVreemdSprite(): CBullet() {
     int rnd = (int)PA_Rand()%3;
     
     if (rnd==0) {
-        loadTex(this,vreemd_metroid)
+        loadTex(this,vreemd_metroid_png)
     }
     if (rnd==1) {
-        loadTex(this,vreemd_supermario)
+        loadTex(this,vreemd_supermario_png)
     }
     if (rnd==2) {
-        loadTex(this,vreemd_yoshi)
+        loadTex(this,vreemd_yoshi_png)
     }
 
     //color = RGB15(255,255,255);

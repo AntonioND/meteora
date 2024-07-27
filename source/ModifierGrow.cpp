@@ -21,7 +21,7 @@
 #include "GameScene.h"
 
 #include "CConcentrate.h"
-#include "launch.h"
+#include "launch_raw.h"
 
 
 ModifierGrow::ModifierGrow(CSprite * _parent,int groMax , int groInc) :Modifier(_parent) {
@@ -49,7 +49,7 @@ void ModifierGrow::thinking()
 
     if (growing_count <= growing_max ) {
 
-         GC_playSound(launch);
+         GC_playSound(launch_raw);
 
          CConcentrate * cc;
          cc = new CConcentrate();

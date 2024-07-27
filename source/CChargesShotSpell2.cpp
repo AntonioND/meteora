@@ -8,24 +8,24 @@
 #include "GameCtrl.h"
 #include "CExplosion.h"
 
-#include "meteor.h"
+#include "meteor_png.h"
 
 #include <cstdlib>
 #include <time.h>
 #include "math.h"
-#include "bullet.h"
+#include "bullet_png.h"
 
 #include "CBullet.h"
 
 #include "GameScene.h"
 
-#include "bullet_lumi.h"
+#include "bullet_lumi_png.h"
 
 
 
 
-#include "invoc_sound.h"
-#include "invoc_final_sound.h"
+#include "invoc_sound_raw.h"
+#include "invoc_final_sound_raw.h"
 
 #include "CFlashDecal.h"
 #include "CPixelDecal.h"
@@ -45,7 +45,7 @@ CChargesShotSpell2::CChargesShotSpell2(): CSpriteCollidable(0,0,0) {
     x = CFixed(88);
     y = CFixed(192+32+92);
 
-    loadTex16col(this,bullet_lumi);
+    loadTex16col(this,bullet_lumi_png);
 
 
 }
@@ -125,7 +125,7 @@ void CChargesShotSpell2::clicked(int px, int py){
 
         y = y - CFixed(40);
         x = x + CFixed(40);
-        GC_playSound(invoc_sound);
+        GC_playSound(invoc_sound_raw);
 
 
     }
@@ -143,7 +143,7 @@ void CChargesShotSpell2::clicked(int px, int py){
 
         y = y + CFixed(40);
         x = x + CFixed(40);
-        GC_playSound(invoc_sound);
+        GC_playSound(invoc_sound_raw);
 
 
     }
@@ -161,7 +161,7 @@ void CChargesShotSpell2::clicked(int px, int py){
 
         y = y + CFixed(40);
         x = x - CFixed(40);
-        GC_playSound(invoc_sound);
+        GC_playSound(invoc_sound_raw);
 
 
     }
@@ -179,7 +179,7 @@ void CChargesShotSpell2::clicked(int px, int py){
 
         y = y - CFixed(40);
         x = x - CFixed(40);
-        GC_playSound(invoc_sound);
+        GC_playSound(invoc_sound_raw);
 
 
     }
@@ -210,7 +210,7 @@ void CChargesShotSpell2::clicked(int px, int py){
         GameCtrl::getSharedObject()->drawOnScreen(128,192+32+96+30,"charged shot spell");
         this->dead();
 
-        GC_playSound(invoc_final_sound);
+        GC_playSound(invoc_final_sound_raw);
 
 
         CFlashDecal * bulletS2; //add a blank flash
