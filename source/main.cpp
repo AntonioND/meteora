@@ -97,7 +97,7 @@ int main()
 
     //WARNING: If you have an error during compilation just below, you need a small hack and add UL_BANK_A_B in ulib header
     //if you want a quick compile without hack just put "UL_BANK_A" but you will very quickly low in memory
-    if (!ulSetTexVramParameters(UL_BANK_A_B, VRAM_A, 256 << 10)) { 
+    if (!ulSetTexVramParameters(UL_BANK_A | UL_BANK_B, VRAM_A, 256 << 10)) { 
         return 0;
     }
 
@@ -238,6 +238,3 @@ if (SaveManager::ent()->isDLDI) {
 	//Program end - should never get there
 	return 0;
 }
-}
-
-

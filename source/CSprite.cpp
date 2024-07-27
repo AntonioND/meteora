@@ -146,7 +146,7 @@ void CSprite::draw(int offset)			{
 }
 
 
-void CSprite::initTex(string texName, const u8 * texRef, const u32 * texSize, int pixelformat = UL_PF_PAL8) {
+void CSprite::initTex(string texName, const u8 * texRef, const u32 texSize, int pixelformat = UL_PF_PAL8) {
 
 
 
@@ -264,7 +264,7 @@ void CSprite::flushTex() {
 
 }
 
-void CSprite::preLoadTex(string texName, const u8 * texRef, const u32 * texSize, int pixelformat = UL_PF_PAL8) {
+void CSprite::preLoadTex(string texName, const u8 * texRef, const u32 texSize, int pixelformat = UL_PF_PAL8) {
 
     map<string,int>::const_iterator iter = _resourcesNbMap.find(texName);
 

@@ -108,9 +108,9 @@ public:
     static map<string, int> _resourcesNbMap;
     static map<string, UL_IMAGE *> _resourcesMap;
 
-    void initTex(string texName, const u8 * texRef, const u32 * texSize ,int pixelformat);
+    void initTex(string texName, const u8 * texRef, const u32 texSize ,int pixelformat);
 
-    static void preLoadTex(string texName, const u8 * texRef, const u32 * texSize ,int pixelformat);
+    static void preLoadTex(string texName, const u8 * texRef, const u32 texSize ,int pixelformat);
     static void flushTex();
 
     void addModifier(CSprite * c) {
