@@ -23,7 +23,7 @@ CLineDecal::CLineDecal(): CSprite() {
     layer = 1;
     border = 5;
     height = 50;
-    color = RGB15(255,255,255);
+    color = RGB15(31,31,31);
     
     x1 = 0;
     y1 = 0;

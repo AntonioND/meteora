@@ -103,11 +103,11 @@ void VreemdStoryCinematicScene::render() {
         loadTex(scrapper,story_vreemd_png);
         description = "This homebrew was sponsored";
         description2 = "by http://www.dev-fr.org ;)";
-        ulSetImageTint(scrapper->spriteTex, RGB15(100,255,100));
+        ulSetImageTint(scrapper->spriteTex, RGB15(12,31,12));
     }
     if (number ==2 ) {
         loadTex(scrapper,story_vreemd_png);
-        ulSetImageTint(scrapper->spriteTex, RGB15(255,255,70));
+        ulSetImageTint(scrapper->spriteTex, RGB15(31,31,8));
         description = "Evil spoon";
         description2 = "Ahhhh a demoniac spoon !!";
     }

@@ -119,7 +119,7 @@ void CChargesShotSpell2::clicked(int px, int py){
         bulletS->y1 = (int)y;
         bulletS->x2 = x+CFixed(40);
         bulletS->y2 = y-CFixed(40);
-        bulletS->color = RGB15(255,255,200);
+        bulletS->color = RGB15(31,31,25);
         GameCtrl::getSharedObject()->addDecoSprite(bulletS);
 
 
@@ -137,7 +137,7 @@ void CChargesShotSpell2::clicked(int px, int py){
         bulletS->y1 = y;
         bulletS->x2 = x+CFixed(40);
         bulletS->y2 = y+CFixed(40);
-        bulletS->color = RGB15(255,255,200);
+        bulletS->color = RGB15(31,31,25);
         GameCtrl::getSharedObject()->addDecoSprite(bulletS);
 
 
@@ -155,7 +155,7 @@ void CChargesShotSpell2::clicked(int px, int py){
         bulletS->y1 = y;
         bulletS->x2 = x-CFixed(40);
         bulletS->y2 = y+CFixed(40);
-        bulletS->color = RGB15(255,255,200);
+        bulletS->color = RGB15(31,31,25);
         GameCtrl::getSharedObject()->addDecoSprite(bulletS);
 
 
@@ -173,7 +173,7 @@ void CChargesShotSpell2::clicked(int px, int py){
         bulletS->y1 = y;
         bulletS->x2 = x-CFixed(40);
         bulletS->y2 = y-CFixed(40);
-        bulletS->color = RGB15(255,255,200);
+        bulletS->color = RGB15(31,31,25);
         GameCtrl::getSharedObject()->addDecoSprite(bulletS);
 
 

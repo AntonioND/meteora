@@ -104,7 +104,7 @@ void ScoreScene::render() {
 		    //bg_haut->draw(0);
             background_haut->draw(0);
             gc->draw(0);
-            //ulDrawGradientRect(0,0,256,192,RGB15(0,0,255),RGB15(0,0,255),RGB15(0,0,120),RGB15(100,0,120));
+            //ulDrawGradientRect(0,0,256,192,RGB15(0,0,255),RGB15(0,0,255),RGB15(0,0,120),RGB15(12,0,15));
             //ulDrawString(90, 50, "Game OVER");
 
             ostringstream manashow;

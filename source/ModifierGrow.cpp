@@ -37,7 +37,7 @@ ModifierGrow::ModifierGrow(CSprite * _parent,int groMax , int groInc) :Modifier(
     CBullet * par = dynamic_cast<CBullet*>(_parent);
 
     if (par) {
-        par->color = par->color & RGB15(150,150,255);
+        par->color = par->color & RGB15(18,18,31);
     }
 }
 

@@ -30,7 +30,7 @@ CImpactDecal::CImpactDecal(int weight): CSprite() {
     //border = 220;
     border = sqrt(weight)*0.1*32;
     //height = 50;
-    color = RGB15(255,255,255);
+    color = RGB15(31,31,31);
 
     GC_playSound(invoc_final_sound_raw);
 

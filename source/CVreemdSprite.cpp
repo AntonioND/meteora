@@ -50,7 +50,7 @@ CVreemdSprite::CVreemdSprite(): CBullet() {
         loadTex(this,vreemd_yoshi_png)
     }
 
-    //color = RGB15(255,255,255);
+    //color = RGB15(31,31,31);
 
     type = GameScene::ennemy_id; //owner
 }

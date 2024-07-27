@@ -113,17 +113,17 @@ void EasyStoryCinematicScene::render() {
         loadTex(scrapper,story_1_png);
         description = "Revange of toudouxmous";
         description2= "be carefull they attack with sweets";
-        ulSetImageTint(scrapper->spriteTex, RGB15(255,100,100));
+        ulSetImageTint(scrapper->spriteTex, RGB15(31,12,12));
     }
     if (number ==4 ) {
         loadTex(scrapper,story_4_png);
         description = "Do you think it's a problem ?";
-        ulSetImageTint(scrapper->spriteTex, RGB15(100,255,100));
+        ulSetImageTint(scrapper->spriteTex, RGB15(12,31,12));
     }
     if (number ==5 ) {
         loadTex(scrapper,story_2_png);
         description = "Cool man !!";
-        ulSetImageTint(scrapper->spriteTex, RGB15(100,255,100));
+        ulSetImageTint(scrapper->spriteTex, RGB15(12,31,12));
     }
 
 

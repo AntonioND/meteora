@@ -31,17 +31,17 @@ void ModifierAddTrailer::thinking()
 {
 
     if ((_parent->type&OWNER_MASK) == 1) {
-        trailerColor = RGB15(200,200,255);
+        trailerColor = RGB15(25,25,31);
     } else if ((_parent->type&OWNER_MASK) == 2) {
-        trailerColor = RGB15(255,200,200);
+        trailerColor = RGB15(31,25,25);
     } else if ((_parent->type&OWNER_MASK) == 3) {
-        trailerColor = RGB15(200,255,200);
+        trailerColor = RGB15(25,31,25);
     } else if ((_parent->type&OWNER_MASK) == 4) {
-        trailerColor = RGB15(255,255,200);
+        trailerColor = RGB15(31,31,25);
     } else if ((_parent->type&OWNER_MASK) == 5) {
-        trailerColor = RGB15(255,200,255);
+        trailerColor = RGB15(31,25,31);
     }else {
-        trailerColor = RGB15(100,100,100);
+        trailerColor = RGB15(7,7,7);
     }
 
     int cury = (int)_parent->y + (int)_parent->getVelY();

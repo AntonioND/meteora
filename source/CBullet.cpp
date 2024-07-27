@@ -49,7 +49,7 @@ CBullet::CBullet(int owner) :CSpriteCollidable(0,0,0) {
     size =0.4;
     mType =1;
     weight = 1;
-    color = RGB15(255,255,255);
+    color = RGB15(31,31,31);
 
     if (owner == 0) {
         owner = GameScene::player_id;

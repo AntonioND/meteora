@@ -119,7 +119,7 @@ void CAlchemySpell::clicked(int px, int py){
         bulletS->y1 = 192+32+120;
         bulletS->x2 = 80+40;
         bulletS->y2 = 192+32+40;
-        bulletS->color = RGB15(255,255,200);
+        bulletS->color = RGB15(31,31,25);
         GameCtrl::getSharedObject()->addDecoSprite(bulletS);
 
     }
@@ -134,7 +134,7 @@ void CAlchemySpell::clicked(int px, int py){
         bulletS->y1 = 192+32+40;
         bulletS->x2 = 80+40+40;
         bulletS->y2 = 192+32+120;
-        bulletS->color = RGB15(255,255,200);
+        bulletS->color = RGB15(31,31,25);
 
 
         GameCtrl::getSharedObject()->addDecoSprite(bulletS);

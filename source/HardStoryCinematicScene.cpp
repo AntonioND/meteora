@@ -103,7 +103,7 @@ void HardStoryCinematicScene::render() {
         description = "planet of evil toudouxmous,";
         description2= "Now they have weapons";
 
-        ulSetImageTint(scrapper->spriteTex, RGB15(255,100,100));
+        ulSetImageTint(scrapper->spriteTex, RGB15(31,12,12));
     }
     if (number ==2 ) {
         loadTex(scrapper,story_duplicate_png);
@@ -118,11 +118,11 @@ void HardStoryCinematicScene::render() {
         loadTex(scrapper,story_duplicate_png);
         description = "Him ? Again ? Is it a mirror ?";
         description2 = "What the hell ?";
-        ulSetImageTint(scrapper->spriteTex, RGB15(100,255,100));
+        ulSetImageTint(scrapper->spriteTex, RGB15(12,31,12));
     }
     if (number ==5 ) {
         loadTex(scrapper,story_4_png);
-        ulSetImageTint(scrapper->spriteTex, RGB15(255,255,70));
+        ulSetImageTint(scrapper->spriteTex, RGB15(31,31,8));
         description = "Dark energy generator...";
         description2 = "Destroy the origin of evil energy";
     }
@@ -137,7 +137,7 @@ void HardStoryCinematicScene::render() {
         loadTex(scrapper,story_duplicate_png);
         description = "AAARHHHH...";
         description2 = "Finish him...";
-        ulSetImageTint(scrapper->spriteTex, RGB15(255,100,100));
+        ulSetImageTint(scrapper->spriteTex, RGB15(31,12,12));
     }
 
         if (number ==8 ) {

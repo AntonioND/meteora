@@ -39,11 +39,11 @@ void SpellItem::draw(int offset) {
 
         if ((lastPressed != 0)||((int)GameScene::mana <(int) mana)) {
                     ulSetAlpha(UL_FX_ALPHA, 16, 1);
-                    ulDrawFillRect((int)x-16, (int)y-offset-16, (int)x+16, (int)y-offset+16, RGB15(255, 0, 0));
+                    ulDrawFillRect((int)x-16, (int)y-offset-16, (int)x+16, (int)y-offset+16, RGB15(31, 0, 0));
                     ulSetAlpha(UL_FX_DEFAULT, 0, 0);
                     
                     if (lastPressed != 0) {
-                        ulDrawFillRect((int)x+17, (int)y-offset-16, (int)x+19, (int)y-offset-16+(32*lastPressed/interval), RGB15(0, 100, 155));
+                        ulDrawFillRect((int)x+17, (int)y-offset-16, (int)x+19, (int)y-offset-16+(32*lastPressed/interval), RGB15(0, 12, 19));
                     }
         }
 

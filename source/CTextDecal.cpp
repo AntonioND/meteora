@@ -27,7 +27,7 @@ CTextDecal::CTextDecal(string pTxt): CSprite() {
 
     text = pTxt;
     
-    color = RGB15(255,255,255);
+    color = RGB15(31,31,31);
     
 }
 
@@ -49,7 +49,7 @@ void CTextDecal::draw(int offset) {
         
         ulDrawString((int) x,(int)y-offset, text.c_str());
         
-        ulSetTextColor((unsigned)RGB15(255,255,255));
+        ulSetTextColor((unsigned)RGB15(31,31,31));
 
 
 }

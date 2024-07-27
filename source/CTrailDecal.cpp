@@ -23,7 +23,7 @@ CTrailDecal::CTrailDecal(): CSprite() {
     layer = 1;
     border = 5;
     height = 50;
-    color = RGB15(200,200,255);
+    color = RGB15(25,25,31);
 }
 
 CTrailDecal::~CTrailDecal() {

@@ -23,7 +23,7 @@ CFlashDecal::CFlashDecal(): CSprite() {
     layer = 1;
     border = 5;
     height = 50;
-    color = RGB15(255,255,255);
+    color = RGB15(31,31,31);
 }
 
 CFlashDecal::~CFlashDecal() {

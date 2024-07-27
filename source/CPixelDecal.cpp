@@ -46,7 +46,7 @@ void CPixelDecal::thinking()
 void CPixelDecal::draw(int offset) {
         ulSetAlpha(UL_FX_ALPHA, alpha, layer);
 
-        ulDrawFillRect((int)x, (int)y-offset, (int)x+1, (int)y-offset+1, RGB15(255, 255, 255));
+        ulDrawFillRect((int)x, (int)y-offset, (int)x+1, (int)y-offset+1, RGB15(31, 31, 31));
 
         ulSetAlpha(UL_FX_DEFAULT, 0, 0);
 

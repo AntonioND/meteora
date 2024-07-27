@@ -58,7 +58,7 @@ void CScoreDecal::draw(int offset) {
          oss << score;
         
         ulDrawString((int) x,(int)y-offset, oss.str().c_str());
-        //((int)x, (int)y-offset, (int)x+1, (int)y-offset+1, RGB15(255, 255, 255));
+        //((int)x, (int)y-offset, (int)x+1, (int)y-offset+1, RGB15(31, 31, 31));
 
         ulSetAlpha(UL_FX_DEFAULT, 0, 0);
 

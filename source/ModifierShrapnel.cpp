@@ -42,7 +42,7 @@ ModifierShrapnel::ModifierShrapnel(CSprite * _parent) :Modifier(_parent) {
         parent_bul = par;
         pa_weight = (int)par->weight;
 
-        par->color = par->color & RGB15(255,255,180);
+        par->color = par->color & RGB15(31,31,22);
     }
 }
 
@@ -85,7 +85,7 @@ ModifierShrapnel::~ModifierShrapnel() {
 
                 bulletS->type = _parent->type&OWNER_MASK;
 
-                //bulletS->color = RGB15(150,100,150);
+                //bulletS->color = RGB15(18,12,18);
                 //bulletS->setSize (_parent->size);
 
                 GameCtrl::getSharedObject()->addSprite(bulletS);

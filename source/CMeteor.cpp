@@ -31,7 +31,7 @@ CMeteor::CMeteor(): CBullet() {
     mType = 2;
     loadTex(this,meteor_png)
 
-    //color = RGB15(255,255,255);
+    //color = RGB15(31,31,31);
 
     type = 2 | MERGEABLE; //owner
 }

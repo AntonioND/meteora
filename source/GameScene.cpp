@@ -133,8 +133,8 @@ void GameScene::damage(CFixed dmg, CSprite * s) {
     if ((int)shield > (int)dmg) {
 
 
-           ulSetImageTint(player_hud->spriteTex, RGB15(0,255,0));
-	       ulSetImageTint(player_hud_jam->spriteTex, RGB15(0,255,0));
+           ulSetImageTint(player_hud->spriteTex, RGB15(0,31,0));
+	       ulSetImageTint(player_hud_jam->spriteTex, RGB15(0,31,0));
 
                 shield = shield - dmg;
 
@@ -172,8 +172,8 @@ void GameScene::damage(CFixed dmg, CSprite * s) {
 
     }
 
-    ulSetImageTint(player_hud->spriteTex, RGB15(255,0,0));
-    ulSetImageTint(player_hud_jam->spriteTex, RGB15(255,0,0));
+    ulSetImageTint(player_hud->spriteTex, RGB15(31,0,0));
+    ulSetImageTint(player_hud_jam->spriteTex, RGB15(31,0,0));
 
     life = life - (dmg - shield);
     shield = CFixed(0);
@@ -183,16 +183,16 @@ void GameScene::damage(CFixed dmg, CSprite * s) {
 void GameScene::damage_ennemy(CFixed dmg) {
     if ((int)ennemy_shield > (int)dmg) {
 
-           ulSetImageTint(ennemy_hud->spriteTex, RGB15(0,255,0));
-	       ulSetImageTint(ennemy_hud_jam->spriteTex, RGB15(0,255,0));
+           ulSetImageTint(ennemy_hud->spriteTex, RGB15(0,31,0));
+	       ulSetImageTint(ennemy_hud_jam->spriteTex, RGB15(0,31,0));
 
             ennemy_shield = ennemy_shield - dmg;
             return;
     }
 
 
-    ulSetImageTint(ennemy_hud->spriteTex, RGB15(255,0,0));
-    ulSetImageTint(ennemy_hud_jam->spriteTex, RGB15(255,0,0));
+    ulSetImageTint(ennemy_hud->spriteTex, RGB15(31,0,0));
+    ulSetImageTint(ennemy_hud_jam->spriteTex, RGB15(31,0,0));
 
     ennemy_life = ennemy_life - (dmg - ennemy_shield);
     ennemy_shield = CFixed(0);
@@ -209,25 +209,25 @@ u16 getColorForLife(int life) {
 
 
     if (life > 400 ) {
-            return RGB15(0,255,b);
+            return RGB15(0,31,b);
     }
 
     if (life > 200) {
             life = (life-300)*255/200;
-            r = life;
-            g = 255;
+            r = life / 8;
+            g = 31;
             return  RGB15(r,g,b);
     }
 
     if (life <= 200) {
             life = (life)*255/200;
-            r = 255;
-            g = 255-life;
+            r = 31;
+            g = (255-life) / 8;
             return  RGB15(r,g,b);
     }
 
     if (life < 0 ) {
-        return RGB15(255,0,b);
+        return RGB15(31,0,b);
     }
 
 
@@ -255,61 +255,61 @@ void GameScene::displayHUD() {
 
 
             /*ulSetAlpha(UL_FX_ALPHA, 12, 5);
-            ulDrawFillRect(0, 0, 80, 40, RGB15(180,0,0));
-            ulDrawFillRect(176, 0, 256, 40, RGB15(0,0,180));
+            ulDrawFillRect(0, 0, 80, 40, RGB15(22,0,0));
+            ulDrawFillRect(176, 0, 256, 40, RGB15(0,0,22));
 
 
 
             ulSetAlpha(UL_FX_DEFAULT, 0, 0);
 
-            ulDrawFillRect(80, 0, 81, 40, RGB15(255,0,0));
-            ulDrawFillRect(0, 39, 81, 40, RGB15(255,0,0));
+            ulDrawFillRect(80, 0, 81, 40, RGB15(31,0,0));
+            ulDrawFillRect(0, 39, 81, 40, RGB15(31,0,0));
 
 
-            ulDrawFillRect(175, 0, 176, 40, RGB15(0,0,255));
-            ulDrawFillRect(175, 39, 256, 40, RGB15(0,0,255));
+            ulDrawFillRect(175, 0, 176, 40, RGB15(0,0,31));
+            ulDrawFillRect(175, 39, 256, 40, RGB15(0,0,31));
             */
 
 
-            ulSetTextColor((unsigned)RGB15(80,80,255));
+            ulSetTextColor((unsigned)RGB15(10,10,31));
             ulDrawString(155, 15, player_name.c_str());
 
-            ulSetTextColor((unsigned)RGB15(80,80,255));
+            ulSetTextColor((unsigned)RGB15(10,10,31));
             ostringstream manashow;
             manashow << ""<< (int)GameScene::mana <<"/"<< (int)max_mana;
             ulDrawString(155, 25, manashow.str().c_str());
 
-            ulSetTextColor((unsigned)RGB15(0,255,0));
+            ulSetTextColor((unsigned)RGB15(0,31,0));
             ostringstream shieldshow;
             shieldshow << ""<< (int)GameScene::shield<< "/100";
             ulDrawString(155, 35, shieldshow.str().c_str());
 
-            ulSetTextColor((unsigned)RGB15(255,255,255));
+            ulSetTextColor((unsigned)RGB15(31,31,31));
             ostringstream lifeshow;
             lifeshow << ""<< (int)GameScene::life << "/500";
             ulDrawString(210, 35, lifeshow.str().c_str());
 
-            ulDrawFillRect(155, 45, 155+80,47 , RGB15(50,50,50));
-            ulDrawFillRect(155, 45, 155+80*((int) life+(int)shield)/600,47 , RGB15(0,0,255));
-            ulDrawFillRect(155, 45, 155+80*((int) life)/600,47 , RGB15(40,40,255));
+            ulDrawFillRect(155, 45, 155+80,47 , RGB15(6,6,6));
+            ulDrawFillRect(155, 45, 155+80*((int) life+(int)shield)/600,47 , RGB15(0,0,31));
+            ulDrawFillRect(155, 45, 155+80*((int) life)/600,47 , RGB15(5,5,31));
 
             if (!isMarathon) {
 
                 ostringstream emanashow;
-                ulSetTextColor(RGB15(255,0,0));
+                ulSetTextColor(RGB15(31,0,0));
                 ulDrawString(15, 15, enemy_name.c_str());
 
 
-                ulSetTextColor(RGB15(0,255,0));
+                ulSetTextColor(RGB15(0,31,0));
                 ostringstream eshieldshow;
                 eshieldshow << ""<< (int)GameScene::ennemy_shield<< "/100";
                 ulDrawString(15, 25, eshieldshow.str().c_str());
 
-                ulSetTextColor(RGB15(80,80,255));
+                ulSetTextColor(RGB15(10,10,31));
                 emanashow << ""<< (int)GameScene::ennemy_mana;
                 ulDrawString(65, 25, emanashow.str().c_str());
 
-                ulSetTextColor(RGB15(255,255,255));
+                ulSetTextColor(RGB15(31,31,31));
                 ostringstream elifeshow;
                 if ((int)GameScene::ennemy_life > 0) {
                     elifeshow << ""<< (int)GameScene::ennemy_life<< "/500";
@@ -318,13 +318,13 @@ void GameScene::displayHUD() {
                 }
                 ulDrawString(15, 35, elifeshow.str().c_str());
 
-                ulDrawFillRect(15, 45, 15+80,47 , RGB15(50,50,50));
-                ulDrawFillRect(15, 45, 15+80*((int)ennemy_life+(int)ennemy_shield)/600,47 , RGB15(255,0,0));
-                ulDrawFillRect(15, 45, 15+80*((int)ennemy_life)/600,47 , RGB15(255,40,40));
+                ulDrawFillRect(15, 45, 15+80,47 , RGB15(6,6,6));
+                ulDrawFillRect(15, 45, 15+80*((int)ennemy_life+(int)ennemy_shield)/600,47 , RGB15(31,0,0));
+                ulDrawFillRect(15, 45, 15+80*((int)ennemy_life)/600,47 , RGB15(31,5,5));
             } else {
-                ulSetTextColor(RGB15(255,0,0));
+                ulSetTextColor(RGB15(31,0,0));
                 ulDrawString(15, 25, "Time elapsed:");
-                ulSetTextColor(RGB15(200,200,200));
+                ulSetTextColor(RGB15(25,25,25));
                 ostringstream elap_time;
                 elap_time << "    "<< GameCtrl::getSharedObject()->getPassedTime() / 30 << "s";
                 ulDrawString(15, 35, elap_time.str().c_str());
@@ -364,7 +364,7 @@ void GameScene::displayHUD() {
 
 
 
-                ulSetTextColor(RGB15(255,255,255));
+                ulSetTextColor(RGB15(31,31,31));
 
             }
             //ulSetImageTint(planet_player->spriteTex, getColorForLife(life));
@@ -623,10 +623,10 @@ void GameScene::render() {
 	   if (!ulGetMainLcd())			{
 
 
-	       ulSetImageTint(player_hud->spriteTex, RGB15(255,255,255));
-	       ulSetImageTint(player_hud_jam->spriteTex, RGB15(255,255,255));
-	       ulSetImageTint(ennemy_hud->spriteTex, RGB15(255,255,255));
-	       ulSetImageTint(ennemy_hud_jam->spriteTex, RGB15(255,255,255));
+	       ulSetImageTint(player_hud->spriteTex, RGB15(31,31,31));
+	       ulSetImageTint(player_hud_jam->spriteTex, RGB15(31,31,31));
+	       ulSetImageTint(ennemy_hud->spriteTex, RGB15(31,31,31));
+	       ulSetImageTint(ennemy_hud_jam->spriteTex, RGB15(31,31,31));
 
 
                 for (int i = 0; i < itemsNumber; i++) {
