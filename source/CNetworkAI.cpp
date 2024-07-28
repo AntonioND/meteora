@@ -57,101 +57,7 @@ using namespace std;
 
 extern const unsigned short scrBottomOption_map[58][32];
 
-// for some odd reason I can't seem to find vcount in ndslib -sigh- (I mean, in a place it doesn't conflict with other things)
-#define		VCOUNT		(*((u16 volatile *) 0x04000006))
-
 char szPersName[20];
-
-//---------------------------------------------------------------------------------
-// Dswifi stub functions
-//void * sgIP_malloc(int size) { return malloc(size); }
-//void sgIP_free(void * ptr) { free(ptr); }
-
-// sgIP_dbgprint only needed in debug version
-//void sgIP_dbgprint(char * txt, ...) {
-//}
-
-// wifi timer function, to update internals of sgIP
-//void Timer_50ms(void) {
-//   Wifi_Timer(50);
-//}
-
-// notification function to send fifo message to arm7
-//void arm9_synctoarm7() { // send fifo message
-//   REG_IPC_FIFO_TX=0x87654321;
-//}
-
-// interrupt handler to receive fifo messages from arm7
-//void arm9_fifo() { // check incoming fifo messages
-//   u32 value = REG_IPC_FIFO_RX;
-//   if(value == 0x87654321) Wifi_Sync();
-//}
-
-//******************************************************************************
-//  Init wifi communication
-//******************************************************************************
-void wifiInit() {
-  // send fifo message to initialize the arm7 wifi
-  REG_IPC_FIFO_CR = IPC_FIFO_ENABLE | IPC_FIFO_SEND_CLEAR; // enable & clear FIFO
-
-  u32 Wifi_pass= Wifi_Init(WIFIINIT_OPTION_USELED);
-  REG_IPC_FIFO_TX=0x12345678;
-  REG_IPC_FIFO_TX=Wifi_pass;
-
-  *((volatile u16 *)0x0400010E) = 0; // disable timer3
-
-#if 0
-  // TODO: Re-enable
-  irqSet(IRQ_TIMER3, Timer_50ms); // setup timer IRQ
-  irqEnable(IRQ_TIMER3);
-  irqSet(IRQ_FIFO_NOT_EMPTY, arm9_fifo); // setup fifo IRQ
-  irqEnable(IRQ_FIFO_NOT_EMPTY);
-
-  REG_IPC_FIFO_CR = IPC_FIFO_ENABLE | IPC_FIFO_RECV_IRQ; // enable FIFO IRQ
-
-  Wifi_SetSyncHandler(arm9_synctoarm7); // tell wifi lib to use our handler to notify arm7
-#endif
-  // set timer3
-  *((volatile u16 *)0x0400010C) = -6553; // 6553.1 * 256 cycles = ~50ms;
-  *((volatile u16 *)0x0400010E) = 0x00C2; // enable, irq, 1/256 clock
-
-  while(Wifi_CheckInit()==0) { // wait for arm7 to be initted successfully
-    while(VCOUNT>192); // wait for vblank
-    while(VCOUNT<192);
-  }
-} // wifi init complete - wifi lib can now be used!
-
-//******************************************************************************
-//  Init wifi communication via WFC
-//******************************************************************************
-u8 wifiConnect(void) {
-  int i;
-  u8 uOK=0x00;
-
-#ifdef DEBUG
-  printf("Connecting via WFC data\n");
-#endif
-  // simple WFC connect:
-  Wifi_AutoConnect(); // request connect
-  while(1) {
-    i=Wifi_AssocStatus(); // check status
-    if(i==ASSOCSTATUS_ASSOCIATED) {
-#ifdef DEBUG
-      printf("Connected successfully!\n");
-#endif
-      uOK = 0x01;
-      break;
-    }
-    if(i==ASSOCSTATUS_CANNOTCONNECT) {
-#ifdef DEBUG
-      printf("Could not connect!\n");
-#endif
-      uOK = 0x00;
-      break;
-    }
-  }
-  return(uOK);
-} // if connected, you can now use the berkley sockets interface to connect to the internet!
 
 int StrToInt(string text) {
        int number;
@@ -217,9 +123,8 @@ void CNetworkAI::connect_() {
         return;
     }
 
-    wifiInit();
-    if(!wifiConnect()) {
-        GameCtrl::getSharedObject()->drawOnScreen(128,130,"error during wfc connection");
+    if(!Wifi_InitDefault(WFC_CONNECT)) {
+        GameCtrl::getSharedObject()->drawOnScreen(128,130,"error during wifi connection");
         GameCtrl::getSharedObject()->addDecoSprite(new FadingDecal());
         return;
     }
