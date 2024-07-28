@@ -40,7 +40,7 @@ NITROFSDIR	:=
 # Defines passed to all files
 # ---------------------------
 
-DEFINES		:= -DTARGET_FLOAT32_IS_FIXED -DTARGET_IS_NDS
+DEFINES		:=
 
 # Libraries
 # ---------
