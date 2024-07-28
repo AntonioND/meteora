@@ -151,7 +151,7 @@ if (SaveManager::ent()->isDLDI) {
 
 
 
-    SplashScreenScene * splash;
+    SplashScreenScene * splash = new SplashScreenScene;
     CSprite * spr;
 
     //first splash
