@@ -46,10 +46,6 @@ static inline int PA_Distance(int x1, int y1, int x2, int y2)
     return h * h + v * v;
 }
 
-#define PA_NONBLOCKING_TCP 2
-
-int PA_InitSocket(int *sock, char *host, int port, int mode);
-
 typedef struct {
     const char *Name;
 } PA_UserInfoInfo;

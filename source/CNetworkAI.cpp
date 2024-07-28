@@ -35,6 +35,10 @@
 
 #include "CFlashDecal.h"
 
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netdb.h>
+
 #include <vector>
 
 using namespace std;
@@ -193,7 +197,7 @@ CNetworkAI::~CNetworkAI() {
     Wifi_DisableWifi();
 }
 
-void CNetworkAI::connect() {
+void CNetworkAI::connect_() {
     if (connected == 0) {
         GameCtrl::getSharedObject()->drawOnScreen(128,110,"wifi connection started");
         connected=1;
@@ -216,12 +220,29 @@ void CNetworkAI::connect() {
 
     connected = 2;
 
-    PA_InitSocket(&sock,"srv.lo2k.net",7000,PA_NONBLOCKING_TCP);
+    int port = 7000;
+    const char *host = "srv.lo2k.net";
+
+    sock = socket(AF_INET, SOCK_STREAM, 0);
+    unsigned long ip = *(unsigned long *)gethostbyname(host)->h_addr_list[0];
+
+    struct sockaddr_in servaddr;
+    servaddr.sin_family = AF_INET;
+    servaddr.sin_port = htons(port);
+    servaddr.sin_addr.s_addr = ip;
+
+    // Non-blocking TCP
+    if (connect(sock, (struct sockaddr *) &servaddr, sizeof(servaddr)) != 0) {
+        GameCtrl::getSharedObject()->drawOnScreen(128,130,"could not connect to the server");
+        GameCtrl::getSharedObject()->addDecoSprite(new FadingDecal());
+        return;
+    }
+
     int i = 1;
     ioctl(sock, FIONBIO, &i);
 
     if ((sock == -1)||(sock == 0)) {
-        GameCtrl::getSharedObject()->drawOnScreen(128,130,"could not connect to the server");
+        GameCtrl::getSharedObject()->drawOnScreen(128,130,"could not ioctl() to the server");
         GameCtrl::getSharedObject()->addDecoSprite(new FadingDecal());
         return;
     }
@@ -251,7 +272,7 @@ void CNetworkAI::thinking()
 {
 
     if (connected!=2) {
-        connect();
+        connect_();
         return;
     }
 

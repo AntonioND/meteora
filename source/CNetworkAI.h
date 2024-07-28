@@ -26,7 +26,7 @@ public :
 
     int connected;
 
-    void connect();
+    void connect_();
 
     CTextDecal * textDecal;
 
