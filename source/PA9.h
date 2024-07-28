@@ -19,10 +19,12 @@ static inline int PA_Rand(void)
 
 static inline void PA_Init(void)
 {
+    // No need to do anything
 }
 
 static inline void PA_InitVBL(void)
 {
+    // No need to do anything
 }
 
 static inline void PA_WaitForVBL(void)
@@ -81,12 +83,12 @@ static inline int PA_Distance(int x1, int y1, int x2, int y2)
     return 0;
 }
 
-#define PA_NONBLOCKING_TCP 0
+#define PA_NONBLOCKING_TCP 0x1234
 
-static inline void PA_InitSocket(void *, const char *, int, int)
+static inline int PA_InitSocket(int *sock, char *host, int port, int mode)
 {
     // TODO
-    return;
+    return 0;
 }
 
 typedef struct {
