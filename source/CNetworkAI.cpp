@@ -129,7 +129,7 @@ u8 wifiConnect(void) {
   u8 uOK=0x00;
 
 #ifdef DEBUG
-  iprintf("Connecting via WFC data\n");
+  printf("Connecting via WFC data\n");
 #endif
   // simple WFC connect:
   Wifi_AutoConnect(); // request connect
@@ -137,14 +137,14 @@ u8 wifiConnect(void) {
     i=Wifi_AssocStatus(); // check status
     if(i==ASSOCSTATUS_ASSOCIATED) {
 #ifdef DEBUG
-      iprintf("Connected successfully!\n");
+      printf("Connected successfully!\n");
 #endif
       uOK = 0x01;
       break;
     }
     if(i==ASSOCSTATUS_CANNOTCONNECT) {
 #ifdef DEBUG
-      iprintf("Could not connect!\n");
+      printf("Could not connect!\n");
 #endif
       uOK = 0x00;
       break;
