@@ -1,5 +1,8 @@
 
 #include <PA9.h>
+
+#include <nds.h>
+
 #define EXMEMCNT ((uint16*)0x04000204) // gère différentes propriétés du port GBA
 #define V_SRAM ((volatile unsigned char*)0x0A000000) // SRAM
 
@@ -10,6 +13,10 @@
 
 u8 DSIO_CMD(u8 addr)
 {
+	// Don't write to the slot 2 space in a DSi. It will cause an exception
+	if (isDSiMode())
+		return 0;
+
 	u8 i;
 	for(i=0;i<30;i++)
 	V_SRAM[addr];
