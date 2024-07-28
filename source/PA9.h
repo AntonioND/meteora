@@ -1,12 +1,17 @@
 #ifndef PA9_H__
 #define PA9_H__
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <errno.h>
 #include <netdb.h>
 #include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include <sys/socket.h>
 
 #include <nds.h>
@@ -19,7 +24,7 @@ static inline int PA_Rand(void)
 
 static inline void PA_Init(void)
 {
-    // No need to do anything
+    srand(time(NULL));
 }
 
 static inline void PA_InitVBL(void)
@@ -40,6 +45,7 @@ static inline void PA_InitSound(void)
 static inline int PA_MicGetVol(void)
 {
     // TODO
+    // return PA_IPC.Mic.Volume
     return 0;
 }
 
@@ -59,37 +65,22 @@ static inline void PA_PlaySoundEx(int ch, const void *data, int length,
     // TODO
 }
 
-static inline int PA_Sin(int angle)
-{
-    // TODO
-    return 0;
-}
+int PA_Sin(int angle);
 
-static inline int PA_Cos(int angle)
-{
-    // TODO
-    return 0;
-}
+int PA_Cos(int angle);
 
-static inline int PA_GetAngle(int x1, int y1, int x2, int y2)
-{
-    // TODO
-    return 0;
-}
+u16 PA_GetAngle(s32 startx, s32 starty, s32 targetx, s32 targety);
 
 static inline int PA_Distance(int x1, int y1, int x2, int y2)
 {
-    // TODO
-    return 0;
+    int64_t h = x1 - x2;
+    int64_t v = y1 - y2;
+    return h * h + v * v;
 }
 
-#define PA_NONBLOCKING_TCP 0x1234
+#define PA_NONBLOCKING_TCP 2
 
-static inline int PA_InitSocket(int *sock, char *host, int port, int mode)
-{
-    // TODO
-    return 0;
-}
+int PA_InitSocket(int *sock, char *host, int port, int mode);
 
 typedef struct {
     int volume;
@@ -104,4 +95,9 @@ typedef struct {
 } PA_UserInfoInfo;
 
 __attribute__ ((unused)) static PA_UserInfoInfo PA_UserInfo = { "Firmware" };
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif // PA9_H__
