@@ -184,7 +184,7 @@ void StoryScene::renderCinematic(int i ) {
 void StoryScene::render() {
 
     ScoreScene * score;
-    StoryCinematicScene * cinematic;
+    //StoryCinematicScene * cinematic;
     /*
         int probaTotalStop;
     int probaDeviation;

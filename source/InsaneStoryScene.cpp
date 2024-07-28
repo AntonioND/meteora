@@ -281,7 +281,7 @@ void InsaneStoryScene::displayCongrat() {
 
         SplashScreenScene * splash2 = new SplashScreenScene();
 
-        CSprite * background_haut2 = new CSprite(128,96,0);
+        //CSprite * background_haut2 = new CSprite(128,96,0);
         //loadTex16col(background_haut,menu_haut);
         loadTex(background_haut,congrat_img_png);
 

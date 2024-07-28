@@ -52,11 +52,11 @@ void EnnemyMultipleShotsManager::thinking()
     GameScene::ennemy_mana = GameScene::ennemy_mana - CFixed(7);
 
     GameCtrl::getSharedObject()->addSprite(bulletS);
-
+#if 0
     ModifierAddTrailer * mat;
 
     mat = new ModifierAddTrailer(bulletS);
-
+#endif
      GC_playSound(launch_raw);
 
    /* bulletNumber++;

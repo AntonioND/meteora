@@ -131,11 +131,11 @@ void CSimpleAI::thinking()
         GameScene::ennemy_mana = GameScene::ennemy_mana - CFixed(30);
 
         GameCtrl::getSharedObject()->addSprite(bulletS);
-
+#if 0
         ModifierAddTrailer * mat;
 
         mat = new ModifierAddTrailer(bulletS);
-
+#endif
          GC_playSound(launch_raw);
          nextThink = (15+PA_Rand()%40)* reactivity;
         } else {
@@ -178,11 +178,11 @@ void CSimpleAI::thinking()
         GameScene::ennemy_mana = GameScene::ennemy_mana - CFixed(10);
 
         GameCtrl::getSharedObject()->addSprite(bulletS);
-
+#if 0
         ModifierAddTrailer * mat;
 
         mat = new ModifierAddTrailer(bulletS);
-
+#endif
          GC_playSound(launch_raw);
          nextThink = (15+PA_Rand()%40)* reactivity;
         } else {

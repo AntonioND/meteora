@@ -231,7 +231,7 @@ u16 getColorForLife(int life) {
     }
 
 
-
+    return RGB15(0,0,0);
 }
 
 void GameScene::displayHUD() {

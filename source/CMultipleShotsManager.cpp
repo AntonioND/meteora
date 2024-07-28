@@ -48,11 +48,11 @@ void CMultipleShotsManager::thinking()
     //GameScene::mana = GameScene::mana - CFixed(5);
 
     GameCtrl::getSharedObject()->addSprite(bulletS);
-
+#if 0
     ModifierAddTrailer * mat;
 
     mat = new ModifierAddTrailer(bulletS);
-
+#endif
     GC_playSound(launch_raw);
 
    /* bulletNumber++;

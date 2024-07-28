@@ -256,9 +256,11 @@ void launchTest(int i) {
 }
 
 void tut1() {
+#if 0
         GameScene * game;
         ScoreScene * score;
         TutorialCinematicScene * cinematic;
+#endif
         SplashScreenScene * splash;
         /*
             int probaTotalStop;
@@ -363,9 +365,11 @@ void tut1() {
 }
 
 void tut2() {
+#if 0
         GameScene * game;
         ScoreScene * score;
         TutorialCinematicScene * cinematic;
+#endif
         SplashScreenScene * splash;
         /*
             int probaTotalStop;
@@ -404,9 +408,11 @@ void tut2() {
 }
 
 void tut3() {
+#if 0
         GameScene * game;
         ScoreScene * score;
         TutorialCinematicScene * cinematic;
+#endif
         SplashScreenScene * splash;
         /*
             int probaTotalStop;
@@ -446,9 +452,11 @@ void tut3() {
 
 
 void tut4() {
+#if 0
         GameScene * game;
         ScoreScene * score;
         TutorialCinematicScene * cinematic;
+#endif
         SplashScreenScene * splash;
         /*
             int probaTotalStop;
@@ -488,9 +496,11 @@ void tut4() {
 
 
 void tut5() {
+#if 0
         GameScene * game;
         ScoreScene * score;
         TutorialCinematicScene * cinematic;
+#endif
         SplashScreenScene * splash;
         /*
             int probaTotalStop;
@@ -530,9 +540,11 @@ void tut5() {
 
 
 void tut6() {
+#if 0
         GameScene * game;
         ScoreScene * score;
         TutorialCinematicScene * cinematic;
+#endif
         SplashScreenScene * splash;
         /*
             int probaTotalStop;

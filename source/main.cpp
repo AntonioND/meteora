@@ -114,6 +114,7 @@ if (SaveManager::ent()->isDLDI) {
 			    {UL_KEY_B, "B: Yeesss !"}
 			   };
 		   	int res = GameCtrl::getSharedObject()->messageBox("It seems your savefile does not exist or is corrupted. Create a new one ?", "Savefile does not exist", 2, buttons);
+		   	(void)res;
 
             SaveManager::ent()->data.clear();
 
@@ -132,6 +133,7 @@ if (SaveManager::ent()->isDLDI) {
 			    {UL_KEY_B, "B: It's bad"}
 			   };
 		   	int res = GameCtrl::getSharedObject()->messageBox("Your rom in not compatible with DLDI, please patch it. Save function desactivated.", "NOT DLDI PATCHED", 2, buttons);
+		   	(void)res;
 
             SaveManager::ent()->data.clear();
 

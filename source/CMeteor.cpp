@@ -41,10 +41,10 @@ CMeteor::~CMeteor() {
 /*
 void CMeteor::thinking()
 {
-        /*if((x>255-32)) {
-            setVel(-getVelX(),getVelY());
-        }*/
-/*
+        //if((x>255-32)) {
+        //    setVel(-getVelX(),getVelY());
+        //}
+
         CDecal * bulletS;
 
         bulletS = new CDecal();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
@@ -81,7 +81,7 @@ void CMeteor::thinking()
     this->spriteTex->angle = this->angle;
     //this->spriteTex->stretchX = 400;
         CSprite::draw(offset);
-       /* if (!((offset-192)<(int)x<offset)) {
+        if (!((offset-192)<(int)x<offset)) {
         ulDrawString((int)x, (int)y, "meteor");
         }
     //this->spriteTex->stretchX = this->spriteTex->sizeX;

@@ -467,7 +467,7 @@ void GC_drawButton(int x0, int y0, int x1, int y1, const char *text, int highlig
 int GameCtrl::messageBox(const char *text, const char *title, int nbButtons, UL_MSGBOX_BUTTON *buttons)
 {
 
-   u32 reserved = 0;
+   //u32 reserved = 0;
    s32 x0, y0, x1, y1, width, height, textWidth, textHeight, titleHeight = ul_curFont->charHeight + 4;
    const UL_COLOR backColor0 = RGB15(103 >> 3, 107 >> 3, 115 >> 3), backColor1 = RGB15(73 >> 3, 77 >> 3, 85 >> 3), backColor2 = RGB15(43 >> 3, 47 >> 3, 55 >> 3);
    const UL_COLOR title1 = RGB15(0 >> 3, 0 >> 3, 128 >> 3), title2 = RGB15(16 >> 3, 132 >> 3, 208 >> 3);

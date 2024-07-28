@@ -99,6 +99,7 @@ void SaveManager::load() {
 
   // copy the file into the buffer:
   result = fread (buffer,1,lSize,pFile);
+  (void)result;
   //if (result != lSize) {fputs ("Reading error",stderr); exit (3);}
 
   savedata = string(buffer);

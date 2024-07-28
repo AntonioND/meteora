@@ -112,8 +112,8 @@ void IntroScene::render() {
 
 
 
-    int release = 0;
-    int btnPress = 0;
+    //int release = 0;
+    //int btnPress = 0;
 
     CDecal * bulletS;
 
@@ -189,7 +189,7 @@ void IntroScene::render() {
              CScene::stopScene();
 
            } else {
-                btnPress = 0;
+                //btnPress = 0;
            }
 
 		}

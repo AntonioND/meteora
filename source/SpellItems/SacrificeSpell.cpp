@@ -50,7 +50,7 @@ void SacrificeSpell::isPressed() {
     
     GC_playSound(scream_raw);
     
-    GameCtrl * gc = GameCtrl::getSharedObject();    
+    //GameCtrl * gc = GameCtrl::getSharedObject();
     
     GameScene::mana = GameScene::mana + CFixed(200);
     GameScene::life = GameScene::life - CFixed(75);

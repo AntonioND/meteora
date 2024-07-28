@@ -192,7 +192,7 @@ void CChargesShotSpell2::clicked(int px, int py){
 
 
     if (nbclicked >= 5) {
-        GameCtrl * gc = GameCtrl::getSharedObject();
+        //GameCtrl * gc = GameCtrl::getSharedObject();
 
         CBullet * bulletS;
         bulletS = new CBullet();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
