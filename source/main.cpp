@@ -19,9 +19,6 @@
 #include "ScoreScene.h"
 
 
-// TODO: This header is missing
-//#include "modfile.h"
-
 #include <sstream>
 #include <time.h>
 
