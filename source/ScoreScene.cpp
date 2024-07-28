@@ -59,7 +59,7 @@ void ScoreScene::render() {
     gc->flushSprites();
 
 
-    PA_PlaySoundRepeat(15, winner_sound_raw);
+    gc->curr_channel_loop_2 = GC_playSoundLoop(winner_sound_raw);
 
     CSprite * background_haut = new CSprite(128,96,0);
     loadTex(background_haut,score_haut_png);
@@ -192,7 +192,7 @@ void ScoreScene::render() {
 	delete(background_bas);
 	//delete(black_screen_sprite);
 
-	PA_StopSound(15);
+	soundKill(gc->curr_channel_loop_2);
 	//delete(bg_haut);
 
 }

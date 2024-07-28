@@ -69,8 +69,8 @@ void StoryCinematicScene::render() {
     string description = "";
     string description2 = "";
 
-    PA_StopSound(12);
-    PA_PlaySoundRepeat(12, cinematic_sound_raw);
+    soundKill(gc->curr_channel_loop_1);
+    gc->curr_channel_loop_1 = GC_playSoundLoop(cinematic_sound_raw);
 
     /*CSprite * background_haut = new CSprite(128,96,0);
     //loadTex16col(background_haut,menu_haut);
@@ -239,7 +239,7 @@ void StoryCinematicScene::render() {
 	//delete(background_bas);
 	//delete(black_screen_sprite);
 
-	PA_StopSound(12);
+	soundKill(gc->curr_channel_loop_1);
 	//delete(bg_haut);
 
 }

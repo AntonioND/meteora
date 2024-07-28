@@ -45,7 +45,7 @@ void HelpScene::render() {
     gc->flushSprites();
 
 
-    PA_PlaySoundRepeat(12, menu_ambiant_raw);
+    gc->curr_channel_loop_1 = GC_playSoundLoop(menu_ambiant_raw);
 
     CSprite * background_haut = new CSprite(128,96,0);
 //    loadTex(background_haut,tutorial_haut);
@@ -141,7 +141,7 @@ void HelpScene::render() {
 	delete(background_bas);
 	//delete(black_screen_sprite);
 
-	PA_StopSound(12);
+	soundKill(gc->curr_channel_loop_1);
 	//delete(bg_haut);
 
 }

@@ -386,6 +386,8 @@ void GameScene::preInit() {
 
 void GameScene::render() {
 
+    GameCtrl * gc = GameCtrl::getSharedObject();
+
     //DEBUG
 #ifdef DEBUGSAVE
     DebugLogger::write("begin render game scene");
@@ -414,11 +416,11 @@ void GameScene::render() {
     //PreLoadTex(meteor)
 
    // if ((rand()%2)==1) {
-        PA_StopSound(15);
+        soundKill(gc->curr_channel_loop_2);
 
-        PA_PlaySoundRepeat(15, beavis2_music_raw);
+        gc->curr_channel_loop_2 = GC_playSoundLoop(beavis2_music_raw);
     //} else {
-      //  PA_PlaySoundRepeat(15, suckers_music);
+      //  gc->curr_channel_loop_2 = GC_playSoundLoop(suckers_music);
     //}
 
         //cursor definition
@@ -460,7 +462,6 @@ void GameScene::render() {
 
 
 
-    GameCtrl * gc = GameCtrl::getSharedObject();
     gc->flushSprites();
 
     if (background_haut == NULL) {
@@ -882,7 +883,7 @@ void GameScene::render() {
     delete(ennemy_hud);
     delete(ennemy_hud_jam);
 
-    PA_StopSound(15);
+    soundKill(gc->curr_channel_loop_2);
 
 	delete(cursor);
 

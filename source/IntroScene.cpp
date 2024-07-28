@@ -54,7 +54,7 @@ void IntroScene::render() {
 
     //CSprite * background_haut = new CSprite(128,96,0);
      //loadTex16col(background_haut,spacehaut)
-    PA_PlaySoundRepeat(12, menu_ambiant_raw);
+    gc->curr_channel_loop_1 = GC_playSoundLoop(menu_ambiant_raw);
 
     CSprite * background_haut = new CSprite(128,96,0);
     //loadTex(background_haut,title)
@@ -257,7 +257,7 @@ void IntroScene::render() {
 	delete(background_bas);
 	//delete(black_screen_sprite);
 
-	PA_StopSound(12);
+	soundKill(gc->curr_channel_loop_1);
 	//delete(bg_haut);
 
 }

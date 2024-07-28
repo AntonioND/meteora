@@ -23,16 +23,6 @@ static inline int PA_MicGetVol(void)
     return 0;
 }
 
-static inline void PA_StopSound(int ch)
-{
-    // TODO
-}
-
-static inline void PA_PlaySoundRepeat(int ch, const void *data)
-{
-    // TODO
-}
-
 int PA_Sin(int angle);
 
 int PA_Cos(int angle);

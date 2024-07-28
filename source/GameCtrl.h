@@ -8,6 +8,7 @@
 
 
 #define GC_playSound(sound) GameCtrl::getSharedObject()->playSound((void*)sound, (u32)sound##_size)
+#define GC_playSoundLoop(sound) GameCtrl::getSharedObject()->playSoundLoop((void*)sound, (u32)sound##_size)
 
 #define UL_MSGBOX_TOUCHPAD_SUPPORT
 
@@ -20,7 +21,8 @@ using namespace std;
 
 
       static GameCtrl* getSharedObject();
-      static int curr_channel;
+      static int curr_channel_loop_1;
+      static int curr_channel_loop_2;
 
       u8 getNewSpriteId();
       void addSprite(CSprite * c);
@@ -54,7 +56,7 @@ using namespace std;
       list<CSprite *> _collisionList[600];
 
       void playSound (const void *data, s32 length);
-
+      int playSoundLoop (const void *data, s32 length);
 
       CSprite * _spriteList[1024];
 

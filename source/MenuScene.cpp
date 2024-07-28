@@ -67,8 +67,7 @@ void MenuScene::render() {
     CSprite::flushTex();
     gc->flushSprites();
 
-
-    PA_PlaySoundRepeat(15, menu_ambiant_raw);
+    gc->curr_channel_loop_2 = GC_playSoundLoop(menu_ambiant_raw);
 
     CSprite * background_haut = new CSprite(128,96,0);
     //loadTex16col(background_haut,menu_haut);
@@ -306,7 +305,7 @@ void MenuScene::render() {
 	delete(background_bas);
 	//delete(black_screen_sprite);
 
-	PA_StopSound(15);
+	soundKill(gc->curr_channel_loop_2);
 	//delete(bg_haut);
 
     CSprite::flushTex();

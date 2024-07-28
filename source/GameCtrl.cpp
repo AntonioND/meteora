@@ -16,7 +16,8 @@
 
   GameCtrl* GameCtrl::pinstance = 0;// initialize pointer
 
-  int GameCtrl::curr_channel = 0;
+  int GameCtrl::curr_channel_loop_1 = -1;
+  int GameCtrl::curr_channel_loop_2 = -1;
 
   GameCtrl* GameCtrl::getSharedObject ()
   {
@@ -442,6 +443,10 @@ if (rangeUp > 599) {
 
   void GameCtrl::playSound (const void *data, s32 length) {
       soundPlaySample(data, SoundFormat_8Bit, length, 11025, 127, 64, false, 0);
+  }
+
+  int GameCtrl::playSoundLoop (const void *data, s32 length) {
+      return soundPlaySample(data, SoundFormat_8Bit, length, 11025, 127, 64, true, length - 4);
   }
 
 
