@@ -432,7 +432,7 @@ void CBullet::addDecals() {
 
         bulletS->setX(this->x);
         bulletS->setY(this->y);
-        bulletS->setVel(CFixed((int)PA_Rand()%64-32)/CFixed(32),CFixed((int)PA_Rand()%64-32)/CFixed(32));
+        bulletS->setVel(CFixed((int)rand()%64-32)/CFixed(32),CFixed((int)rand()%64-32)/CFixed(32));
 
         //loadTex16col(bulletS,crap_small)
                 bulletS->size=0.4;

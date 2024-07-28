@@ -42,7 +42,7 @@ void SingleShot::isPressed() {
         if ((int)GameScene::mana>0) {
             CBullet * bulletS;
             bulletS = new CBullet();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-            bulletS->setX((int)(128+PA_Rand()%180-90));
+            bulletS->setX((int)(128+rand()%180-90));
             bulletS->setY(192+32+192);
             bulletS->setVel(0,-8);
             bulletS->weight = 14;

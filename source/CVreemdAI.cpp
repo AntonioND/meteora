@@ -43,10 +43,10 @@ CVreemdAI::~CVreemdAI() {
 void CVreemdAI::thinking()
 {
 
-    if ((int)PA_Rand()%8==3) {
+    if ((int)rand()%8==3) {
         CVreemdSprite * bulletS;
         bulletS = new CVreemdSprite();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-        bulletS->setX((int)(128+PA_Rand()%180-90));
+        bulletS->setX((int)(128+rand()%180-90));
         bulletS->setY(-12);
         //bulletS->setVel(0,3);
         bulletS->setVel(0,2);
@@ -61,7 +61,7 @@ void CVreemdAI::thinking()
     if ((GameCtrl::getSharedObject()->getPassedTime() - lastPassedTime) > 120 ) {
             GameScene::ennemy_id = GameScene::player_id;
             while (GameScene::ennemy_id == GameScene::player_id) {
-                            GameScene::ennemy_id =PA_Rand()%5+1;
+                            GameScene::ennemy_id =rand()%5+1;
             }
             lastPassedTime = GameCtrl::getSharedObject()->getPassedTime();
     }

@@ -135,38 +135,38 @@ void IntroScene::render() {
 
              if (i%1==0) {
                     bulletS = new CDecal();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-                    bulletS->setX((int)(128+PA_Rand()%200-100));
+                    bulletS->setX((int)(128+rand()%200-100));
                     bulletS->setY(192+32+192);
                     bulletS->setVel(0,-2);
-                    bulletS->size=((double)(PA_Rand()%8))/8;
+                    bulletS->size=((double)(rand()%8))/8;
                     loadTex16col(bulletS,crap_small_png)
 
                     gc->addDecoSprite(bulletS);
 
                     bulletS = new CDecal();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-                    bulletS->setX((int)(128+PA_Rand()%200-100));
+                    bulletS->setX((int)(128+rand()%200-100));
                     bulletS->setY(192+32+192);
                     bulletS->setVel(0,-1);
-                    bulletS->size=((double)(PA_Rand()%8))/16;
+                    bulletS->size=((double)(rand()%8))/16;
                     loadTex16col(bulletS,crap_small_png)
 
                     gc->addDecoSprite(bulletS);
 
                     CPixelDecal * bulletS2;
                     bulletS2 = new CPixelDecal();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-                    bulletS2->setX((int)(128+PA_Rand()%200-100));
+                    bulletS2->setX((int)(128+rand()%200-100));
                     bulletS2->setY(192+32+192);
                     bulletS2->setVel(0,-1);
-                    bulletS2->size=((double)(PA_Rand()%8))/16;
+                    bulletS2->size=((double)(rand()%8))/16;
                     //loadTex16col(bulletS,crap_small_png)
 
                     gc->addDecoSprite(bulletS2);
 
                     bulletS2 = new CPixelDecal();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-                    bulletS2->setX((int)(128+PA_Rand()%200-100));
+                    bulletS2->setX((int)(128+rand()%200-100));
                     bulletS2->setY(192+32+192);
                     bulletS2->setVel(0,-1);
-                    bulletS2->size=((double)(PA_Rand()%8))/16;
+                    bulletS2->size=((double)(rand()%8))/16;
                     //loadTex16col(bulletS,crap_small_png)
 
                     gc->addDecoSprite(bulletS2);
@@ -214,7 +214,7 @@ void IntroScene::render() {
 		//Wait the VBlank (synchronize at 60 fps)
 
 		ulSyncFrame();
-        //PA_WaitForVBL();
+        //swiWaitForVBlank();
 
 		//totalTime = TIMER1_DATA;
 	}

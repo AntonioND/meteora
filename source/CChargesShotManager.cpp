@@ -69,7 +69,7 @@ void CChargesShotManager::thinking()
    /* bulletNumber++;
 
     bulletS = new CBullet();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-    bulletS->setX((int)(128+PA_Rand()%180-90));
+    bulletS->setX((int)(128+rand()%180-90));
     bulletS->setY(192+32+192);
     bulletS->setVel(0,-15);
     bulletS->weight = 3;
@@ -80,7 +80,7 @@ void CChargesShotManager::thinking()
     bulletNumber++;
 
     bulletS = new CBullet();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-    bulletS->setX((int)(128+PA_Rand()%180-90));
+    bulletS->setX((int)(128+rand()%180-90));
     bulletS->setY(192+32+192);
     bulletS->setVel(0,-15);
     bulletS->weight = 3;

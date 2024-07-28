@@ -66,10 +66,10 @@ void CSimpleAI::thinking()
     exp->y = 50;
     exp->setVel(0,7);
     GameCtrl::getSharedObject()->addDecoSprite(exp);*/
-    int order = PA_Rand()%100;
+    int order = rand()%100;
 
 
-    if ((int)GameScene::ennemy_mana < (PA_Rand()%100)+50) {
+    if ((int)GameScene::ennemy_mana < (rand()%100)+50) {
         nextThink = reactivity * 10;
         return;
     }
@@ -77,10 +77,10 @@ void CSimpleAI::thinking()
      if ((int)GameScene::ennemy_mana > 1500) {
         CBullet * bulletS;
         bulletS = new CBullet(GameScene::ennemy_id);//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-        bulletS->setX((int)(128+PA_Rand()%180-90));
+        bulletS->setX((int)(128+rand()%180-90));
         bulletS->setY(-12);
         //bulletS->setVel(0,3);
-        bulletS->setVel(0,CFixed(4)+CFixed((int)PA_Rand()%(extraPower/2)));
+        bulletS->setVel(0,CFixed(4)+CFixed((int)rand()%(extraPower/2)));
         bulletS->weight = 1501;
         bulletS->setSize (sqrt(bulletS->weight)*0.1);
 
@@ -89,7 +89,7 @@ void CSimpleAI::thinking()
         GameCtrl::getSharedObject()->addSprite(bulletS);
 
         GC_playSound(launch_raw);
-        nextThink = (15+PA_Rand()%40)* reactivity;
+        nextThink = (15+rand()%40)* reactivity;
      }
 
     if (order < probaShrapnelAttack) {
@@ -97,7 +97,7 @@ void CSimpleAI::thinking()
             if ((int)GameScene::ennemy_mana > 50) {
             CBullet * bulletS;
             bulletS = new CBullet(GameScene::ennemy_id);//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-            bulletS->setX((int)(128+PA_Rand()%180-90));
+            bulletS->setX((int)(128+rand()%180-90));
             bulletS->setY(-12);
             //bulletS->setVel(0,3);
             bulletS->setVel(0,2);
@@ -111,7 +111,7 @@ void CSimpleAI::thinking()
             GameCtrl::getSharedObject()->addSprite(bulletS);
 
              GC_playSound(launch_raw);
-             nextThink = (15+PA_Rand()%40)* reactivity;
+             nextThink = (15+rand()%40)* reactivity;
             } else {
                     nextThink = 0;
             }
@@ -121,11 +121,11 @@ void CSimpleAI::thinking()
         if ((int)GameScene::ennemy_mana > 30) {
         CBullet * bulletS;
         bulletS = new CBullet(GameScene::ennemy_id);//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-        bulletS->setX((int)(128+PA_Rand()%180-90));
+        bulletS->setX((int)(128+rand()%180-90));
         bulletS->setY(-6);
         //bulletS->setVel(0,3);
         bulletS->setVel(0,4);
-        bulletS->weight = 100+PA_Rand()%40;
+        bulletS->weight = 100+rand()%40;
         bulletS->setSize (sqrt(bulletS->weight)*0.1);
 
         GameScene::ennemy_mana = GameScene::ennemy_mana - CFixed(30);
@@ -137,7 +137,7 @@ void CSimpleAI::thinking()
         mat = new ModifierAddTrailer(bulletS);
 #endif
          GC_playSound(launch_raw);
-         nextThink = (15+PA_Rand()%40)* reactivity;
+         nextThink = (15+rand()%40)* reactivity;
         } else {
                 nextThink = 0;
         }
@@ -151,9 +151,9 @@ void CSimpleAI::thinking()
         if ((int)GameScene::ennemy_mana > 10) {
             if (GameCtrl::getSharedObject()->getSpriteCount() < 300) {
                 CMeteor * meteor = new CMeteor();
-                meteor->setX((int)(128+PA_Rand()%90-45));
+                meteor->setX((int)(128+rand()%90-45));
                 meteor->setY(-30);
-                meteor->setVel(((float)(PA_Rand()%5))/4+PA_Rand()%extraPower,1);
+                meteor->setVel(((float)(rand()%5))/4+rand()%extraPower,1);
 
                 GameCtrl::getSharedObject()->addSprite(meteor);
 
@@ -168,10 +168,10 @@ void CSimpleAI::thinking()
         if ((int)GameScene::ennemy_mana > 10) {
         CBullet * bulletS;
         bulletS = new CBullet(GameScene::ennemy_id);//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-        bulletS->setX((int)(128+PA_Rand()%180-90));
+        bulletS->setX((int)(128+rand()%180-90));
         bulletS->setY(-12);
         //bulletS->setVel(0,3);
-        bulletS->setVel(0,CFixed(4)+CFixed((int)PA_Rand()%extraPower));
+        bulletS->setVel(0,CFixed(4)+CFixed((int)rand()%extraPower));
         bulletS->weight = 12;
         bulletS->setSize (sqrt(bulletS->weight)*0.1);
 
@@ -184,7 +184,7 @@ void CSimpleAI::thinking()
         mat = new ModifierAddTrailer(bulletS);
 #endif
          GC_playSound(launch_raw);
-         nextThink = (15+PA_Rand()%40)* reactivity;
+         nextThink = (15+rand()%40)* reactivity;
         } else {
                 nextThink = 0;
         }
@@ -225,7 +225,7 @@ while (bulletTotal > 0) {
         bulletTotal = -1;
     }
     bulletSize = 30;
-        int percent = PA_Rand()%100;
+        int percent = rand()%100;
     /*
         probaTotalStop = 5;
         probaDeviation = 45;

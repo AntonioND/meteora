@@ -79,7 +79,7 @@ ModifierShrapnel::~ModifierShrapnel() {
                 bulletS = new CBullet((_parent->type&OWNER_MASK));//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
                 bulletS->setX(_parent->x);
                 bulletS->setY(_parent->y);
-                bulletS->setVel(_parent->getVelX()-CFixed(1)+CFixed(z)/CFixed(2),_parent->getVelY()*CFixed(1.5)-(CFixed((int)PA_Rand()%8)/CFixed(8)));
+                bulletS->setVel(_parent->getVelX()-CFixed(1)+CFixed(z)/CFixed(2),_parent->getVelY()*CFixed(1.5)-(CFixed((int)rand()%8)/CFixed(8)));
                 bulletS->weight = pa_weight/5;
                 bulletS->setSize(parent_bul->size/4);
 

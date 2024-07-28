@@ -41,7 +41,7 @@ void EnnemyMultipleShotsManager::thinking()
     if ((int)GameScene::ennemy_mana > 8) {
         CBullet * bulletS;
         bulletS = new CBullet(GameScene::ennemy_id);//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-        bulletS->setX((int)(128+PA_Rand()%180-90));
+        bulletS->setX((int)(128+rand()%180-90));
         bulletS->setY(-12);
         //bulletS->setVel(0,3);
         bulletS->setVel(0,(4+pow));
@@ -62,7 +62,7 @@ void EnnemyMultipleShotsManager::thinking()
    /* bulletNumber++;
 
     bulletS = new CBullet();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-    bulletS->setX((int)(128+PA_Rand()%180-90));
+    bulletS->setX((int)(128+rand()%180-90));
     bulletS->setY(192+32+192);
     bulletS->setVel(0,-15);
     bulletS->weight = 3;
@@ -73,7 +73,7 @@ void EnnemyMultipleShotsManager::thinking()
     bulletNumber++;
 
     bulletS = new CBullet();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-    bulletS->setX((int)(128+PA_Rand()%180-90));
+    bulletS->setX((int)(128+rand()%180-90));
     bulletS->setY(192+32+192);
     bulletS->setVel(0,-15);
     bulletS->weight = 3;

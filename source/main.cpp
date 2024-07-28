@@ -23,6 +23,7 @@
 //#include "modfile.h"
 
 #include <sstream>
+#include <time.h>
 
 #include "SaveManager.h"
 
@@ -81,10 +82,9 @@ int main()
 
     //fatInitDefault();
 
-   	PA_Init();    // PA Init...
+    srand(time(NULL));
 
-	PA_InitVBL();	// VBL Init...
-	PA_InitSound(); 	// Sound Init, for the mod player...
+    soundEnable(); // Sound init
 
 
 

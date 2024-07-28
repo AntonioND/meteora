@@ -106,12 +106,12 @@ GameScene::GameScene(): CScene()  {
 
     isMarathon = 0;
 
-    GameScene::player_id =PA_Rand()%5+1;
+    GameScene::player_id =rand()%5+1;
 
     GameScene::ennemy_id = GameScene::player_id;
 
     while (GameScene::ennemy_id == GameScene::player_id) {
-        GameScene::ennemy_id =PA_Rand()%5+1;
+        GameScene::ennemy_id =rand()%5+1;
     }
 
     quake = 0;
@@ -238,7 +238,7 @@ void GameScene::displayHUD() {
 
 
 
-            ulSetAlpha(UL_FX_ALPHA, 15+PA_Rand()%5, 5);
+            ulSetAlpha(UL_FX_ALPHA, 15+rand()%5, 5);
             player_hud_jam->frame = GameCtrl::getSharedObject()->getPassedTime()%3;
             player_hud_jam->draw(0);
 
@@ -357,7 +357,7 @@ void GameScene::displayHUD() {
                 if ((GameCtrl::getSharedObject()->getPassedTime()%700 == 699 )) {
                         GameScene::ennemy_id = GameScene::player_id;
                         while (GameScene::ennemy_id == GameScene::player_id) {
-                            GameScene::ennemy_id =PA_Rand()%5+1;
+                            GameScene::ennemy_id =rand()%5+1;
                         }
                 }
 
@@ -413,7 +413,7 @@ void GameScene::render() {
 
     //PreLoadTex(meteor)
 
-   // if ((PA_Rand()%2)==1) {
+   // if ((rand()%2)==1) {
         PA_StopSound(15);
 
         PA_PlaySoundRepeat(15, beavis2_music_raw);
@@ -678,7 +678,7 @@ void GameScene::render() {
 	         if ((ul_keys.held.down||ul_keys.held.up||ul_keys.held.B||ul_keys.held.X)&&started) {
                     if ((i%1==0)&&((int)GameScene::mana>0)) {
                     bulletS = new CBullet();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
-                    bulletS->setX((int)(128+PA_Rand()%90-45));
+                    bulletS->setX((int)(128+rand()%90-45));
                     bulletS->setY(192+32+192);
                     bulletS->setVel(0,-1);
                     //loadTex16col(bulletS,bullet)
@@ -781,7 +781,7 @@ void GameScene::render() {
         int quakeRnd = 0;
 
         if (quake!=0) {
-            quakeRnd = PA_Rand()%quake-quake/2;
+            quakeRnd = rand()%quake-quake/2;
         }
 
 	   //Start our drawing
@@ -866,7 +866,7 @@ void GameScene::render() {
 		//Wait the VBlank (synchronize at 60 fps)
 
 		ulSyncFrame();
-        //PA_WaitForVBL();
+        //swiWaitForVBlank();
 
 		//totalTime = TIMER1_DATA;
 	}

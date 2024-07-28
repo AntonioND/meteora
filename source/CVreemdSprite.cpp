@@ -26,19 +26,19 @@
 #include "GameScene.h"
 
 CVreemdSprite::CVreemdSprite(): CBullet() {
-/*    if (PA_Rand()%10==1) {
-        weight =  int(1000+PA_Rand()%90);
+/*    if (rand()%10==1) {
+        weight =  int(1000+rand()%90);
     } else {
-        weight =  int(PA_Rand()%90);
+        weight =  int(rand()%90);
     }*/
     //this->size = sqrt(this->weight)*0.1; //pow(weight,1);
-    weight =  int(PA_Rand()%180)+40;
+    weight =  int(rand()%180)+40;
     
     this->size = sqrt(this->weight)*0.1; //pow(weight,1);
     
     mType = 2;
     
-    int rnd = (int)PA_Rand()%3;
+    int rnd = (int)rand()%3;
     
     if (rnd==0) {
         loadTex(this,vreemd_metroid_png)
@@ -74,7 +74,7 @@ void CVreemdSprite::dead() {
 
         bulletS->setX(this->x);
         bulletS->setY(this->y);
-        bulletS->setVel(CFixed((int)PA_Rand()%64-32)/CFixed(32),CFixed((int)PA_Rand()%64-32)/CFixed(32));
+        bulletS->setVel(CFixed((int)rand()%64-32)/CFixed(32),CFixed((int)rand()%64-32)/CFixed(32));
 
         //loadTex16col(bulletS,crap_small)
                 bulletS->size=0.4;

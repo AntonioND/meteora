@@ -101,7 +101,7 @@ void CChargesShotSpell2::draw(int offset) {
 
             bulletS->setX(this->x);
             bulletS->setY(this->y);
-            bulletS->setVel(CFixed((int)PA_Rand()%64-32)/CFixed(32),CFixed((int)PA_Rand()%64-32)/CFixed(32));
+            bulletS->setVel(CFixed((int)rand()%64-32)/CFixed(32),CFixed((int)rand()%64-32)/CFixed(32));
 
 
             GameCtrl::getSharedObject()->addDecoSprite(bulletS);

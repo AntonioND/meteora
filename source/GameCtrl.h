@@ -7,7 +7,7 @@
 #include <list>
 
 
-#define GC_playSound(sound) GameCtrl::getSharedObject()->playSound((void*)sound, (u32)sound##_size, PA_SoundOption.volume, PA_SoundOption.freq, PA_SoundOption.format)
+#define GC_playSound(sound) GameCtrl::getSharedObject()->playSound((void*)sound, (u32)sound##_size)
 
 #define UL_MSGBOX_TOUCHPAD_SUPPORT
 
@@ -53,7 +53,7 @@ using namespace std;
 
       list<CSprite *> _collisionList[600];
 
-      void playSound (const void *data, s32 length, u8 volume, int freq, s16 format);
+      void playSound (const void *data, s32 length);
 
 
       CSprite * _spriteList[1024];

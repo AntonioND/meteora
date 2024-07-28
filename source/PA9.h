@@ -11,36 +11,10 @@ extern "C" {
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
 #include <sys/socket.h>
 
 #include <nds.h>
 #include <dswifi9.h>
-
-static inline int PA_Rand(void)
-{
-    return rand();
-}
-
-static inline void PA_Init(void)
-{
-    srand(time(NULL));
-}
-
-static inline void PA_InitVBL(void)
-{
-    // No need to do anything
-}
-
-static inline void PA_WaitForVBL(void)
-{
-    swiWaitForVBlank();
-}
-
-static inline void PA_InitSound(void)
-{
-    soundEnable();
-}
 
 static inline int PA_MicGetVol(void)
 {
@@ -55,12 +29,6 @@ static inline void PA_StopSound(int ch)
 }
 
 static inline void PA_PlaySoundRepeat(int ch, const void *data)
-{
-    // TODO
-}
-
-static inline void PA_PlaySoundEx(int ch, const void *data, int length,
-                                  int volume, int freq, int format)
 {
     // TODO
 }
@@ -81,14 +49,6 @@ static inline int PA_Distance(int x1, int y1, int x2, int y2)
 #define PA_NONBLOCKING_TCP 2
 
 int PA_InitSocket(int *sock, char *host, int port, int mode);
-
-typedef struct {
-    int volume;
-    int freq;
-    int format;
-} PA_SoundOptionInfo;
-
-__attribute__ ((unused)) static PA_SoundOptionInfo PA_SoundOption = { 0, 0, 0 };
 
 typedef struct {
     const char *Name;

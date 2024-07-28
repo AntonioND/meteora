@@ -440,13 +440,8 @@ if (rangeUp > 599) {
 
   }
 
-  void GameCtrl::playSound (const void *data, s32 length, u8 volume, int freq, s16 format) {
-        curr_channel +=1;
-        if (curr_channel > 14) {
-            curr_channel = 0;
-        }
-        PA_StopSound(curr_channel);
-        PA_PlaySoundEx (curr_channel, data, length, volume, freq, format);
+  void GameCtrl::playSound (const void *data, s32 length) {
+      soundPlaySample(data, SoundFormat_8Bit, length, 11025, 127, 64, false, 0);
   }
 
 

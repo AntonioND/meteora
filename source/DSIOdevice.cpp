@@ -50,7 +50,7 @@ u8 DSIO_Light()
 {
 	u8 temp;
  	DSIO_CMD(0x03);
-	PA_WaitForVBL();
+	swiWaitForVBlank();
  	temp=DSIO_CMD(0x04);
  	return temp;
 
@@ -124,7 +124,7 @@ u8 DSIO_Axe_X()
 {
 	u8 temp;
  	DSIO_CMD(0x12);
-	PA_WaitForVBL();
+	swiWaitForVBlank();
  	temp=DSIO_CMD(0x04);
  	return temp;
 
@@ -138,7 +138,7 @@ u8 DSIO_Axe_Y()
 {
 	u8 temp;
  	DSIO_CMD(0x11);
-	PA_WaitForVBL();
+	swiWaitForVBlank();
  	temp=DSIO_CMD(0x04);
  	return temp;
 
@@ -152,7 +152,7 @@ u8 DSIO_Axe_Z()
 {
 	u8 temp;
  	DSIO_CMD(0x10);
-	PA_WaitForVBL();
+	swiWaitForVBlank();
  	temp=DSIO_CMD(0x04);
  	return temp;
 

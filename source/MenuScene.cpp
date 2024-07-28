@@ -127,18 +127,18 @@ void MenuScene::render() {
 
                     CDecal * bulletS = new CDecal();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
                     bulletS->setX(CFixed(-10));
-                    bulletS->setY((int)PA_Rand()%60+110);
+                    bulletS->setY((int)rand()%60+110);
                     bulletS->setVel(5,0);
-                    bulletS->size=((double)(PA_Rand()%8))/8;
+                    bulletS->size=((double)(rand()%8))/8;
                     loadTex16col(bulletS,crap_small_png)
 
                     gc->addDecoSprite(bulletS);
 
                     bulletS = new CDecal();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
                     bulletS->setX(CFixed(-10));
-                    bulletS->setY((int)PA_Rand()%60+110);
+                    bulletS->setY((int)rand()%60+110);
                     bulletS->setVel(3,0);
-                    bulletS->size=((double)(PA_Rand()%8))/8;
+                    bulletS->size=((double)(rand()%8))/8;
                     loadTex16col(bulletS,crap_small_png)
 
                     gc->addDecoSprite(bulletS);
@@ -146,9 +146,9 @@ void MenuScene::render() {
                     CPixelDecal * bulletS2;
                     bulletS2 = new CPixelDecal();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
                     bulletS->setX(CFixed(-10));
-                    bulletS->setY((int)PA_Rand()%60+110);
+                    bulletS->setY((int)rand()%60+110);
                     bulletS->setVel(2,0);
-                    bulletS->size=((double)(PA_Rand()%8))/16;
+                    bulletS->size=((double)(rand()%8))/16;
 
                     //loadTex16col(bulletS,crap_small)
 
@@ -156,9 +156,9 @@ void MenuScene::render() {
 
                     bulletS2 = new CPixelDecal();//(ul_keys.touch.x,ul_keys.touch.y+192+32,0);
                     bulletS->setX(CFixed(-10));
-                    bulletS->setY((int)PA_Rand()%60+110);
+                    bulletS->setY((int)rand()%60+110);
                     bulletS->setVel(3,0);
-                    bulletS->size=((double)(PA_Rand()%8))/16;
+                    bulletS->size=((double)(rand()%8))/16;
 
                     //loadTex16col(bulletS,crap_small)
 

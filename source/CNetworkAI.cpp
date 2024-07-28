@@ -335,7 +335,7 @@ void CNetworkAI::interpret(string s) {
             s->weight = StrToInt(args[5]);
             s->setSize (sqrt(s->weight)*0.1);
 
-            if (PA_Rand()%2==1) {
+            if (rand()%2==1) {
                 s->type = s->type^MERGEABLE;
             }
 

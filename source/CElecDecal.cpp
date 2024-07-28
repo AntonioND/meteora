@@ -26,7 +26,7 @@ CElecDecal::CElecDecal() :CSprite(0,0,0,10) {
 
     count = 0;
 
-    this->frame= (int)PA_Rand()%10;
+    this->frame= (int)rand()%10;
 
 
 }
@@ -49,7 +49,7 @@ void CElecDecal::draw(int offset) {
 void CElecDecal::thinking()
 {
         count ++;
-        this->frame= (int)PA_Rand()%10;
+        this->frame= (int)rand()%10;
 
         if (count > 3) {
             //frame = 6;
