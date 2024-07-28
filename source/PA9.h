@@ -5,16 +5,7 @@
 extern "C" {
 #endif
 
-#include <errno.h>
-#include <netdb.h>
-#include <netinet/in.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/socket.h>
-
 #include <nds.h>
-#include <dswifi9.h>
 
 static inline int PA_MicGetVol(void)
 {
