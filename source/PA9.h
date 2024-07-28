@@ -14,9 +14,15 @@ static inline int PA_MicGetVol(void)
     return 0;
 }
 
-int PA_Sin(int angle);
+static inline int PA_Sin(int angle)
+{
+    return sinLerp(angle * 64) >> 4;
+}
 
-int PA_Cos(int angle);
+static inline int PA_Cos(int angle)
+{
+    return cosLerp(angle * 64) >> 4;
+}
 
 u16 PA_GetAngle(s32 startx, s32 starty, s32 targetx, s32 targety);
 
