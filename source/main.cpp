@@ -83,6 +83,7 @@ int main()
 
     soundEnable(); // Sound init
 
+    MicInit();
 
 
 	//Initialize µLibrary

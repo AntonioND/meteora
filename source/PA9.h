@@ -7,12 +7,9 @@ extern "C" {
 
 #include <nds.h>
 
-static inline int PA_MicGetVol(void)
-{
-    // TODO
-    // return PA_IPC.Mic.Volume
-    return 0;
-}
+void MicInit(void);
+
+int PA_MicGetVol(void);
 
 static inline int PA_Sin(int angle)
 {
