@@ -120,7 +120,14 @@ GameScene::GameScene(): CScene()  {
     background_haut = NULL;
     background_bas = NULL;
 
-    player_name = string((char *)PA_UserInfo.Name);
+    // Clamp from UTF-16 to ASCII (we can't display non-ASCII chars anyway...)
+    int i;
+    char name[10 + 1];
+    for (i = 0; i < PersonalData->nameLen; i++)
+        name[i] = PersonalData->name[i];
+    name[i] = '\0';
+
+    player_name = strdup(name);
 
     enemy_name = "Enemy";
 }

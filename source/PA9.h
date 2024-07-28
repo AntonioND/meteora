@@ -36,12 +36,6 @@ static inline int PA_Distance(int x1, int y1, int x2, int y2)
     return h * h + v * v;
 }
 
-typedef struct {
-    const char *Name;
-} PA_UserInfoInfo;
-
-__attribute__ ((unused)) static PA_UserInfoInfo PA_UserInfo = { "Firmware" };
-
 #ifdef __cplusplus
 }
 #endif

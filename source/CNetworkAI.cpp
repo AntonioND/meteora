@@ -247,9 +247,14 @@ void CNetworkAI::connect_() {
         return;
     }
 
+    // Clamp from UTF-16 to ASCII (we can't display non-ASCII chars anyway...)
+    char name[10 + 1];
+    for (i = 0; i < PersonalData->nameLen; i++)
+        name[i] = PersonalData->name[i];
+    name[i] = '\0';
 
     ostringstream oss;
-    oss << "connect " << string((char *)PA_UserInfo.Name) << + "\n\r";
+    oss << "connect " << string(name) << + "\n\r";
 
     string msg = oss.str();
 
