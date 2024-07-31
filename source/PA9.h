@@ -9,17 +9,7 @@ extern "C" {
 
 void MicInit(void);
 
-int PA_MicGetVol(void);
-
-static inline int PA_Sin(int angle)
-{
-    return sinLerp(angle * 64) >> 4;
-}
-
-static inline int PA_Cos(int angle)
-{
-    return cosLerp(angle * 64) >> 4;
-}
+int MicGetVol(void);
 
 u16 PA_GetAngle(s32 startx, s32 starty, s32 targetx, s32 targety);
 

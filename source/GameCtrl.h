@@ -66,7 +66,7 @@ using namespace std;
       u32 _spriteDecoNumber;
 
       int getMicVolume() {
-            micMiddle = (CFixed((int)PA_MicGetVol())+micMiddle*CFixed(3))/CFixed(4);
+            micMiddle = (CFixed(MicGetVol()) + micMiddle * CFixed(3)) / CFixed(4);
             return (int)micMiddle;
       }
 

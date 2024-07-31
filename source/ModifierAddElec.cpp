@@ -36,8 +36,8 @@ void ModifierAddElec::thinking()
     s = new CElecDecal();
     s->setX(_parent->x-CFixed(20)+CFixed((int)rand()%40));
     s->setY(_parent->y-CFixed(20)+CFixed((int)rand()%40));
-    //s->setX(_parent->x+CFixed(size*this->spriteTex->sizeX*PA_Sin(rand()%512)));
-    //s->setY(_parent->y+CFixed(size*this->spriteTex->sizeX*PA_Cos(rand()%512)));
+    //s->setX(_parent->x + CFixed(size * this->spriteTex->sizeX * sinLerp(64 * (rand() % 512)) >> 4));
+    //s->setY(_parent->y + CFixed(size * this->spriteTex->sizeX * cosLerp(64 * (rand() % 512)) >> 4));
 
     GameCtrl::getSharedObject()->addDecoSprite(s);
 

@@ -60,11 +60,11 @@ void CLineDecal::draw(int offset) {
         
         int x21,x22,y21,y22;
         
-        x21 = x2-PA_Sin(angle)/50;
-        x22 = x2+PA_Sin(angle)/50;
+        x21 = x2 - (sinLerp(64 * angle) >> 4) / 50;
+        x22 = x2 + (sinLerp(64 * angle) >> 4) / 50;
         
-        y21 = y2-PA_Cos(angle)/50;
-        y22 = y2+PA_Cos(angle)/50;
+        y21 = y2 - (cosLerp(64 * angle) >> 4) / 50;
+        y22 = y2 + (cosLerp(64 * angle) >> 4) / 50;
 
         ulSetAlpha(UL_FX_ALPHA, alpha, layer);
 

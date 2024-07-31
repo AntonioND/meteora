@@ -41,9 +41,19 @@ void MicInit(void)
                    MicFormat_8Bit, SAMPLE_RATE, microphone_handler);
 }
 
-int PA_MicGetVol(void)
+int MicGetVol(void)
 {
     return mic_volume;
+}
+
+static inline int PA_Sin(int angle)
+{
+    return sinLerp(angle * 64) >> 4;
+}
+
+static inline int PA_Cos(int angle)
+{
+    return cosLerp(angle * 64) >> 4;
 }
 
 static u16 PA_AdjustAngle(u16 angle, s16 anglerot, s32 startx, s32 starty, s32 targetx, s32 targety)
