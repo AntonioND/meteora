@@ -43,21 +43,19 @@ This game depends on several libraries (PAlib, µLibrary, libpng, zlib and
 DSWiFi). The port to BlocksDS has removed the dependency on PAlib, but all other
 dependencies remain.
 
-Install [BlocksDS](https://blocksds.github.io/docs/).
+1. Install [BlocksDS](https://blocksds.github.io/docs/).
 
-Install µLibrary following the instructions [here](https://github.com/AntonioND/ulibrary).
+1. Install [µLibrary](https://github.com/AntonioND/ulibrary):
 
-Install libpng and zlib:
+    ```bash
+    wf-pacman -Sy blocksds-ulibrary
+    ```
 
-```
-wf-pacman -S toolchain-gcc-arm-none-eabi-libpng16 toolchain-gcc-arm-none-eabi-zlib
-```
+1. Build the game running this in the root of this repository:
 
-After that, build the game running this in the root of repository:
-
-```
-make -j`nproc`
-```
+    ```bash
+    make -j`nproc`
+    ```
 
 ## Credits
 
