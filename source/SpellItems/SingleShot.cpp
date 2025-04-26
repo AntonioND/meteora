@@ -21,7 +21,7 @@
 #include "../CBullet.h"
 #include "../ModifierAddTrailer.h"
 
-#include <math.h>
+#include <cmath>
 
 SingleShot::SingleShot() : SpellItem() {
     //ulDisableTransparentColor();

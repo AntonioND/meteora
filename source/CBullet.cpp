@@ -9,8 +9,8 @@
 #include "CExplosion.h"
 
 #include <cstdlib>
-#include <time.h>
-#include <math.h>
+#include <ctime>
+#include <cmath>
 
 #include "bullet_png.h"
 #include "bullet_small_png.h"

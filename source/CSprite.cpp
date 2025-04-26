@@ -5,7 +5,7 @@
 //Our ball PNG data
 //#include "ball.h"
 
-#include <math.h>
+#include <cmath>
 #include "GameCtrl.h"
 
 #include "crap_small_png.h"
